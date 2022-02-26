@@ -1,0 +1,91 @@
+<AboutWindow>:
+	name: 'about_window'
+	GridLayout
+		rows: 3
+
+		AnchorLayout:
+		    canvas:
+		        Color:
+		            rgba: 0.92, 0.94, 0.01, 1
+		        Rectangle:
+		            pos: self.pos
+		            size: self.size
+
+			size_hint: 1, 0.1
+			anchor_x: 'center'
+			anchor_y: 'center'
+
+			Label:
+				color: 0,0,0,0.8
+				id: text_input
+				text: 'О принтере'
+				font_size: sp(36)
+				multiline: False
+				input_type: 'number'
+				input_filter: 'int'
+
+		GridLayout:
+			cols: 2
+
+			BoxLayout:
+				size_hint: 0.4, 1
+			    canvas:
+			        Color:
+			            rgba: 0.1, 0.1, 0.1, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size				
+
+			BoxLayout:
+				size_hint: 0.6, 1
+
+				Label:
+					text: 'Текстовая информация о принтере. \nСерийный номер, версия прошивки и т.п.'
+
+
+		BoxLayout:
+			cols: 3
+			size_hint: 1, 0.1
+
+			BoxLayout:
+				canvas:
+					Color:
+						rgba: 0.71, 0.72, 0.11, 1
+					Rectangle:
+						pos: self.pos
+						size: self.size
+				size_hint: 0.1, 1
+
+				Label:
+					id: temp_label
+					text: ''
+					font_size: sp(28)
+					color: 0,0,0,0.8
+
+			AnchorLayout:
+			    size_hint: 0.75, 1
+			    canvas:
+			        Color:
+			            rgba: 0.92, 0.94, 0.01, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size
+
+				Label:
+					id: text_input
+					text: 'ООО "НПП "3D Аддитивные технологии"'
+					color: 0,0,0,0.8
+					font_size: sp(28)
+					#text-align: 'left'
+					multiline: False
+					input_type: 'number'
+					input_filter: 'int'
+			BoxLayout:
+				size_hint: 0.15, 1
+				Button:
+					text: 'Назад'
+					font_size: sp(28)
+					background_color: 0.92, 0.94, 0.01, 1
+					on_release:
+						app.root.current = 'settings_window'
+						root.manager.transition.direction = 'right'

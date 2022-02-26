@@ -1,0 +1,51 @@
+<PopupFinishPrinting>:
+    name: 'popup_finish_printing'
+    GridLayout:
+        rows:3
+        
+        AnchorLayout:
+            size_hint: 0.6, 0.1
+            canvas:
+                Color:
+                    rgba: 0.71, 0.72, 0.11, 1
+            Label:
+                text: "Печать оконченна"
+                pos_hint: {"x":0.2, "top":1}
+
+        Label:
+            size_hint: 0.6, 0.3
+            text: "Пожалуйста, оцените качество печати"
+        GridLayout:
+            size_hint: 0.6, 0.6
+            cols: 5
+            Button:
+                text: "1"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.1, "y":0.1}
+                on_release:
+                    app.root.current = 'main_window'
+                    app.root.con.closeme()
+            Button:
+                text: "2"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.1, "y":0.1}
+                on_release:
+                    app.root.current = 'main_window'
+            Button:
+                text: "3"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.1, "y":0.1}
+                on_release:
+                    app.root.current = 'main_window'
+            Button:
+                text: "4"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.1, "y":0.1}        
+                on_release:
+                    app.root.current = 'main_window'
+            Button:
+                text: "5"
+                size_hint: 0.8, 0.2
+                pos_hint: {"x":0.1, "y":0.1}
+                on_release:
+                    app.root.current = 'main_window'

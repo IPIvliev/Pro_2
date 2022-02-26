@@ -1,0 +1,161 @@
+<ManageWindow>:
+	name: 'manage_window'
+
+	vat_round_toggle: vat_round_toggle
+	clean_toggle: clean_toggle
+
+	GridLayout
+		rows: 3
+
+		AnchorLayout:
+		    canvas:
+		        Color:
+		            rgba: 0.92, 0.94, 0.01, 1
+		        Rectangle:
+		            pos: self.pos
+		            size: self.size
+
+			size_hint: 1, 0.1
+			anchor_x: 'center'
+			anchor_y: 'center'
+
+			Label:
+				color: 0,0,0,0.8
+				id: text_input
+				text: 'Управление принтером'
+				font_size: sp(36)
+				multiline: False
+				input_type: 'number'
+				input_filter: 'int'
+
+		GridLayout:
+			cols: 3
+			padding: 95, 30
+			spacing: 30
+
+			GridLayout:
+				cols: 1
+				spacing: 10
+
+				Button:
+					background_color: 0.92, 0.94, 0.01, 1
+					size_hint: 1, 0.9
+					#size: 150, 150
+					on_release:
+						app.root.current = 'z_moving_window'
+						root.manager.transition.direction = 'left'
+
+				Label:
+					size_hint: 1, 0.1
+					#size: 150, 10
+					text: 'Перемещение по оси Z'
+					font_size: sp(20)
+					color: 0.92, 0.94, 0.01, 1
+
+			GridLayout:
+				cols: 1
+				spacing: 10
+
+				ToggleButton:
+					id: clean_toggle
+					text: 'Выключено'
+					font_size: sp(30)
+					background_color: 0.92, 0.94, 0.01, 1
+					size_hint: 1, 0.9
+					#size: 150, 150
+					on_release:
+						root.clean_display()
+
+				Label:
+					size_hint: 1, 0.1
+					#size: 150, 10
+					text: 'Очистка экрана'
+					font_size: sp(20)
+					color: 0.92, 0.94, 0.01, 1
+
+			GridLayout:
+				cols: 1
+				spacing: 10
+
+				Button:
+					background_color: 0.92, 0.94, 0.01, 1
+					size_hint: 1, 0.9
+					#size: 150, 150
+					on_release:
+						app.root.current = 'vat_manage_window'
+						root.manager.transition.direction = 'left'
+
+				Label:
+					size_hint: 1, 0.1
+					#size: 150, 10
+					text: 'Наполнение ванны'
+					font_size: sp(20)
+					color: 0.92, 0.94, 0.01, 1
+
+			GridLayout:
+				cols: 1
+				spacing: 10
+
+				ToggleButton:
+					id: vat_round_toggle
+					text: 'Выключено'
+					font_size: sp(30)
+					background_color: 0.92, 0.94, 0.01, 1
+					size_hint: 1, 0.9
+					#size: 150, 150
+					on_release:
+						root.round_vat()
+
+				Label:
+					size_hint: 1, 0.1
+					#size: 150, 10
+					text: 'Поворот ванны'
+					font_size: sp(20)
+					color: 0.92, 0.94, 0.01, 1
+
+		BoxLayout:
+			cols: 3
+			size_hint: 1, 0.1
+
+			BoxLayout:
+				canvas:
+					Color:
+						rgba: 0.71, 0.72, 0.11, 1
+					Rectangle:
+						pos: self.pos
+						size: self.size
+				size_hint: 0.1, 1
+
+				Label:
+					id: temp_label
+					text: ''
+					font_size: sp(28)
+					color: 0,0,0,0.8
+
+			AnchorLayout:
+			    size_hint: 0.75, 1
+			    canvas:
+			        Color:
+			            rgba: 0.92, 0.94, 0.01, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size
+
+				Label:
+					id: text_input
+					text: 'ООО "НПП "3D Аддитивные технологии"'
+					color: 0,0,0,0.8
+					font_size: sp(28)
+					#text-align: 'left'
+					multiline: False
+					input_type: 'number'
+					input_filter: 'int'
+			BoxLayout:
+				size_hint: 0.15, 1
+				Button:
+					text: 'Назад'
+					font_size: sp(28)
+					background_color: 0.92, 0.94, 0.01, 1
+					on_release:
+						app.root.current = 'main_window'
+						root.manager.transition.direction = 'right'

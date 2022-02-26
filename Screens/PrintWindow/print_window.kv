@@ -1,0 +1,244 @@
+<PrintWindow>:
+	name: 'print_window'
+
+	GridLayout
+		rows: 3
+
+		AnchorLayout:
+		    canvas:
+		        Color:
+		            rgba: 0.92, 0.94, 0.01, 1
+		        Rectangle:
+		            pos: self.pos
+		            size: self.size
+
+			size_hint: 1, 0.1
+			anchor_x: 'center'
+			anchor_y: 'center'
+
+			Label:
+				color: 0,0,0,0.8
+				id: text_input
+				text: 'Печать'
+				font_size: sp(36)
+				multiline: False
+				input_type: 'number'
+				input_filter: 'int'
+
+		BoxLayout:
+			cols: 2
+
+
+	        # Создание дерева файлов с одной стороны
+	        # FileChooserListView:
+	        #    on_selection: root.select(*args)
+
+	        # Создание иконки с другой стороны
+
+	        FileChooserIconView:
+	        	id: choose_model
+	        	size_hint: 0.7, 1
+	        	rootpath: '/media/pi/KINGSTON'
+	            on_selection: root.select(*args)
+	            filters: ['*.ctb', '*.cbddlp', '*.photon']
+
+	        BoxLayout:
+	        	rows: 2
+	        	orientation: 'vertical'
+	        	size_hint: 0.3, 1
+			    canvas:
+			        Color:
+			            rgba: 1, 1, 1, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size
+				AnchorLayout:
+				    canvas:
+				        Color:
+				            rgba: 0.71, 0.72, 0.11, 1
+				        Rectangle:
+				            pos: self.pos
+				            size: self.size
+
+					size_hint: 1, 0.1
+					anchor_x: 'center'
+					anchor_y: 'center'
+
+
+
+					Label:
+						color: 0,0,0,0.8
+						id: text_input
+						text: 'Информация о модели'
+						font_size: '15'
+						multiline: False
+						input_type: 'number'
+						input_filter: 'int'
+
+				GridLayout:
+					opacity: 1 if root.isShownParams else 0
+					size_hint: 1, 0.8
+					rows: 3
+
+					AnchorLayout:
+						size_hint: 1, 0.1
+						anchor_x: 'center'
+						anchor_y: 'center'
+						Label:
+							id: model_name
+							color: 0,0,0,0.8
+							text: ''
+					GridLayout:
+						size_hint: 1, 0.4
+						rows: 2
+
+						GridLayout:
+							rows: 7
+
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Засветка низа:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: bottom_light
+										text: '25'
+										color: 0,0,0,0.8
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Основная засветка:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: main_light
+										text: '25'
+										color: 0,0,0,0.8										
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Вес модели:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: model_weight
+										text: '25'
+										color: 0,0,0,0.8
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Толщина слоя:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: model_thinkness
+										text: '25'
+										color: 0,0,0,0.8
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Время печати:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: printing_time
+										text: '25'
+										color: 0,0,0,0.8
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Кол-во слоёв:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: layers_amount
+										text: '25'
+										color: 0,0,0,0.8
+							GridLayout:
+								cols: 2
+								BoxLayout:
+									Label:
+										text: 'Скорость подъёма:'
+										color: 0,0,0,0.8
+										font_size: '12'
+								BoxLayout:
+									Label:
+										id: lifting_speed
+										text: '25'
+										color: 0,0,0,0.8
+					BoxLayout:
+						size_hint: 1, 0.5
+						Image:
+							id: model_img
+							source: ''
+
+				AnchorLayout:
+					size_hint: 1, 0.1
+					anchor_x: 'center'
+					anchor_y: 'center'
+
+					Button:
+						text: 'Запустить печать'
+						on_release:
+							root.manager.screens[9].model_preparetion(choose_model.selection)
+							app.root.current = 'print_process_window'
+							root.manager.transition.direction = 'left'
+		BoxLayout:
+			cols: 3
+			size_hint: 1, 0.1
+
+			BoxLayout:
+				canvas:
+					Color:
+						rgba: 0.71, 0.72, 0.11, 1
+					Rectangle:
+						pos: self.pos
+						size: self.size
+				size_hint: 0.1, 1
+
+				Label:
+					id: temp_label
+					text: ''
+					font_size: sp(28)
+					color: 0,0,0,0.8
+
+			AnchorLayout:
+			    size_hint: 0.75, 1
+			    canvas:
+			        Color:
+			            rgba: 0.92, 0.94, 0.01, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size
+
+				Label:
+					id: text_input
+					text: 'ООО "НПП "3D Аддитивные технологии"'
+					color: 0,0,0,0.8
+					font_size: sp(28)
+					#text-align: 'left'
+					multiline: False
+					input_type: 'number'
+					input_filter: 'int'
+			BoxLayout:
+				size_hint: 0.15, 1
+				Button:
+					text: 'Назад'
+					font_size: sp(28)
+					background_color: 0.92, 0.94, 0.01, 1
+					on_release:
+						app.root.current = 'main_window'
+						root.manager.transition.direction = 'right'

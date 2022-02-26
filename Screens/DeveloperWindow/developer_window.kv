@@ -1,0 +1,154 @@
+<DeveloperWindow>:
+	name: 'developer_window'
+	GridLayout
+		rows: 4
+
+		AnchorLayout:
+		    canvas:
+		        Color:
+		            rgba: 0.92, 0.94, 0.01, 1
+		        Rectangle:
+		            pos: self.pos
+		            size: self.size
+
+			size_hint: 1, 0.1
+			anchor_x: 'center'
+			anchor_y: 'center'
+
+			Label:
+				color: 0,0,0,0.8
+				id: text_input
+				text: 'Дополнительные настройки'
+				font_size: sp(36)
+				multiline: False
+				input_type: 'number'
+				input_filter: 'int'
+
+		GridLayout:
+			cols: 2
+
+			BoxLayout:
+				size_hint: 0.3, 1
+			    canvas:
+			        Color:
+			            rgba: 0.1, 0.1, 0.1, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size
+			    GridLayout:
+			    	rows: 8
+					Label:
+						size_hint: 1, 0.2
+						text: 'Скорость поворота ванны:'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Заполняемость ванны (%):'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Скорость открытия двери:'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Lift distance:'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Расстояние шага по Z:'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Vat delay (ванна до Z):'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Vat Z delay (ванна после окончания подъёма Z):'
+					Label:
+						size_hint: 1, 0.2
+						text: 'Усилие на тензо:'
+
+			BoxLayout:
+				size_hint: 0.7, 1
+
+				GridLayout:
+					rows: 8
+					TextInput:
+						id: vat_speed_input
+						size_hint: 1, 0.2
+						text: root.manager.vat_speed
+					TextInput:
+						id: vat_amount_input
+						size_hint: 1, 0.2
+						text: root.manager.vat_amount
+					TextInput:
+						id: door_speed_input
+						size_hint: 1, 0.2
+						text: '0'
+					TextInput:
+						id: lift_distance_input
+						size_hint: 1, 0.2
+						text: '0'
+					TextInput:
+						id: z_step_mm_input
+						size_hint: 1, 0.2
+						text: '0'
+					TextInput:
+						id: vat_delay_input
+						size_hint: 1, 0.2
+						text: '0'
+					TextInput:
+						id: vat_z_delay_input
+						size_hint: 1, 0.2
+						text: '0'
+					TextInput:
+						id: tenzo_weight_input
+						size_hint: 1, 0.2
+						text: '0'
+	    BoxLayout:
+	    	size_hint: 1, 0.1
+	    	Button:
+	    		text: 'Сохранить'
+	    		on_press:
+	    			root.save_params()
+
+		BoxLayout:
+			cols: 3
+			size_hint: 1, 0.1
+
+			BoxLayout:
+				canvas:
+					Color:
+						rgba: 0.71, 0.72, 0.11, 1
+					Rectangle:
+						pos: self.pos
+						size: self.size
+				size_hint: 0.1, 1
+
+				Label:
+					id: temp_label
+					text: ''
+					font_size: sp(28)
+					color: 0,0,0,0.8
+
+			AnchorLayout:
+			    size_hint: 0.75, 1
+			    canvas:
+			        Color:
+			            rgba: 0.92, 0.94, 0.01, 1
+			        Rectangle:
+			            pos: self.pos
+			            size: self.size
+
+				Label:
+					id: text_input
+					text: 'ООО "НПП "3D Аддитивные технологии"'
+					color: 0,0,0,0.8
+					font_size: sp(28)
+					#text-align: 'left'
+					multiline: False
+					input_type: 'number'
+					input_filter: 'int'
+			BoxLayout:
+				size_hint: 0.15, 1
+				Button:
+					text: 'Назад'
+					font_size: sp(28)
+					background_color: 0.92, 0.94, 0.01, 1
+					on_release:
+						app.root.current = 'settings_window'
+						root.manager.transition.direction = 'right'
