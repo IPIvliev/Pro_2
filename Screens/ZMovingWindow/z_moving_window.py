@@ -1,5 +1,4 @@
 from kivy.uix.screenmanager import Screen
-from Moduls.temperature import Temperature
 from Moduls.stepper import Motor
 from Moduls.stepper1 import Motor1
 from kivy.clock import Clock

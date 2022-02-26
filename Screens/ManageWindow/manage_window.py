@@ -1,5 +1,4 @@
 from kivy.uix.screenmanager import Screen
-#from Moduls.temperature import Temperature
 from Moduls.vat_stepper import VatMotor
 
 class ManageWindow(Screen):

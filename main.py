@@ -22,9 +22,7 @@ from Screens.PrintProcessWindow.print_process_window import PrintProcessWindow
 from Screens.NetWindow.net_window import NetWindow
 from Screens.PrintProcessWindow._popup_finish_printing import PopupFinishPrinting
 
-from Moduls.temperature import Temperature
 from Moduls.ping import Ping
-from Moduls.PAJ7620U2 import PAJ7620U2
 
 import os
 #os.environ["KIVY_BCM_DISPMANX_ID"] = "5" #LCD 
@@ -51,9 +49,7 @@ class MainApp(App):
 
     def build(self):
         windows = Builder.load_file('main.kv')
-        Temperature.t(windows)
         Ping.callPing(windows)
-        PAJ7620U2.start_paj(windows)
 
         return windows
 

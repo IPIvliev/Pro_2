@@ -1,12 +1,6 @@
 from kivy.uix.screenmanager import Screen
-#from Moduls.print import Print
 from pyphotonfile import Photon
-#import os
-#import io
-#from PIL import Image
-#import numpy as np
 import pygame
-#from math import *
 import math
 from kivy.properties import BooleanProperty
 import time
