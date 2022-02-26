@@ -109,26 +109,6 @@
 					font_size: sp(30)
 					color: 0.92, 0.94, 0.01, 1
 
-			GridLayout:
-				cols: 1
-				spacing: 15
-
-				ToggleButton:
-					id: door_toggle
-					text: 'Закрыто'
-					font_size: sp(30)
-					background_color: 0.92, 0.94, 0.01, 1
-					size_hint: 1, 0.9
-					#size: 150, 150
-					on_release:
-						root.open_door()
-				Label:
-					size_hint: 1, 0.1
-					#size: 150, 10
-					text: 'Дверь'
-					font_size: sp(30)
-					color: 0.92, 0.94, 0.01, 1
-
 		BoxLayout:
 			cols: 3
 			size_hint: 1, 0.1
