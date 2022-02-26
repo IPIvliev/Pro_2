@@ -10,7 +10,6 @@ from Moduls.stepper1 import Motor1
 from Moduls.vat_stepper import VatMotor
 from Moduls.led import LED
 from Moduls.scale import Scale
-from Moduls.distance import Distance
 
 pause = BooleanProperty()
 pause = False
@@ -115,7 +114,7 @@ class Print():
 		print('Проверяем парарельность печатающей платформы. Если в допусках, то начинаем печать')
 
 		print('Проверяем наличие полимера в ванной. Если достоточно, начинаем печать, иначе доливаем')
-		Distance.check_distance()
+		#Distance.check_distance()
 
 		print('Z идёт вниз до срабатывания тензо датчика')
 		Print.z_go_stepper1(400000)
@@ -140,7 +139,7 @@ class Print():
 	def vat_and_z_go(self, vat_delay, vat_z_delay, layer_thinkness):
 		
 		print('Проверяем наличие полимера в ванной. Если достоточно, начинаем печать, иначе доливаем')
-		Distance.check_distance()
+		#Distance.check_distance()
 
 		# Включаем поворот ванны
 		print('Включаем поворот ванны')
