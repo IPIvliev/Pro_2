@@ -44,8 +44,6 @@ class WindowManager(ScreenManager):
     lift_distance = config.get("DEFAULT", "lift_distance")
     z_step_mm = config.get("DEFAULT", "z_step_mm")
 
-    lightPort = config.get("PORTS", "lightPort")
-
 class MainApp(App):
     net_status = 'OffLine'
 
