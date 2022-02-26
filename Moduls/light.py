@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-light = 18
+light = lightPort
 
 class Light():
 
