@@ -3,8 +3,7 @@ import RPi.GPIO as GPIO
 import configparser
 config = configparser.ConfigParser()
 config.read('printer_config.ini')
-lightPort = config.get("PORTS", "lightPort")
-light = lightPort
+light = config.get("PORTS", "lightPort")
 
 class Light():
 
