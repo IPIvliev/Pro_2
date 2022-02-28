@@ -55,14 +55,13 @@ class Motor1():
     def start_scale():
         sample = Scale.readCount()
         weight = float(Motor1.tenzor_weight)
-        time.sleep(0.1)
-        print(weight)
         
         while True:
 
             count = Scale.readCount()
             w=0
             w=(count-sample)/106
+            print(w)
             
             if int(w) > weight:
               Motor1.stop_moving()
