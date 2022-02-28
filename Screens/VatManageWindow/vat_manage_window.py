@@ -10,7 +10,7 @@ class VatManageWindow(Screen):
 		#self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward', 0.1), 0.1)
 		#Clock.schedule_once(partial(PumpMotor.pump_go, 'forward', 0.1), 0.3)
 		moving = Thread(target=PumpMotor.pump_go, args=('forward', 0.1))
-		moving.daemon = False
+		moving.daemon = True
 		moving.start()
 
 	def pour_out(self):
