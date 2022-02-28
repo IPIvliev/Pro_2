@@ -27,7 +27,7 @@ def motorone():
     # ================ Motors one test  section 1=============
     try:
         print("1. motor forward")
-        MotorOne.forward(50)
+        MotorOne.forward(99)
         input("press key to stop")
         print("motor stop\n")
         MotorOne.stop(0)
