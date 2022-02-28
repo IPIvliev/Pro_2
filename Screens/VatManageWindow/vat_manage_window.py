@@ -15,4 +15,5 @@ class VatManageWindow(Screen):
 		#PumpMotor.pump_go('backward', 0.1)
 
 	def stop_pressing(self):
-		self.event.cancel()
+		#PMotor.stop(0)
+		pass
