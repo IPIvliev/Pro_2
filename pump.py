@@ -3,7 +3,7 @@
 3 functions Motorone =one motor running , motortwo =second motor running, motorboth = both motors running"""
 
 import time
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 #import sys
 #sys.path.insert(0, '/home/pi/Documents/tech/RpiMotorLib/RpiMotorLib')
 #import rpi_dc_lib 
