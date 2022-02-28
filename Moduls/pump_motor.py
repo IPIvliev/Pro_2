@@ -1,5 +1,5 @@
 import time
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 from RpiMotorLib import rpi_dc_lib
 
 # ====== tests for  DC motor driven by TB6612FNG ====
@@ -12,6 +12,7 @@ Standby = 6
 Freq = 50
 
 # Declare an named instance of class pass a name and motor type
+rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
 
 class PumpMotor():
