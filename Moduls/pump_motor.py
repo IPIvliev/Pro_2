@@ -12,7 +12,7 @@ AI2 = 19
 #BI2 = 24
 Standby = 6
 
-Freq = 15
+Freq = 50
 
 # Declare an named instance of class pass a name and motor type
 PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "pump_motor")
