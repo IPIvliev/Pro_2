@@ -22,5 +22,5 @@ class PumpMotor():
 			print("Motor go")
 		else:
 			PMotor.backward(80)
-		#time.sleep(delay)
+		time.sleep(5)
 		#PMotor.stop(0)
