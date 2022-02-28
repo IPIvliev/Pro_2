@@ -68,17 +68,21 @@
 								halign: 'center'
 								on_press:
 									root.pour_in()
+								on_release:
+									root.pour_out()
 							Button:
 								text: 'Стоп'
 								halign: 'center'
 								on_press:
-									root.pour_stop()
+									root.pour_out()
 							Button:
 								text: 'Слить \nв ёмкость'
 								halign: 'center'
 								on_press:
 									root.pour_out()
-
+								on_release:
+									root.pour_out()
+									
 						BoxLayout:
 							cols: 3
 							
