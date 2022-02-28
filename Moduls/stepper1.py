@@ -55,6 +55,8 @@ class Motor1():
     def start_scale():
         sample = Scale.readCount()
         weight = float(Motor1.tenzor_weight)
+        time.sleep(0.1)
+        print(weight)
         
         while True:
 
