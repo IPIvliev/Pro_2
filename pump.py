@@ -23,7 +23,7 @@ def motorone():
     """ set of tests to run on one DC motor connected to A channel """
     print(" TEST: testing motor 1")
     # Motorssetup
-    MotorOne = rpi_dc_lib.TB6612FNGDc(AI1 ,AI2 ,PWA ,Freq,True, "motor_one")
+    MotorOne = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
     # ================ Motors one test  section 1=============
     try:
         print("1. motor forward")
