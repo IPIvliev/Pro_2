@@ -1,5 +1,5 @@
 import time
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 from RpiMotorLib import rpi_dc_lib
 
 # ====== tests for  DC motor driven by TB6612FNG ====
