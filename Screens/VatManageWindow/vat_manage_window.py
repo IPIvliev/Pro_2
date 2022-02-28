@@ -10,6 +10,7 @@ class VatManageWindow(Screen):
 
 	def pour_out(self):
 		#self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'backward', 0.1), 0.1)
+		PumpMotor.pump_go('backward', 0.1)
 
 	def stop_pressing(self):
 		self.event.cancel()
