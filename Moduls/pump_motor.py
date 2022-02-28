@@ -18,8 +18,14 @@ class PumpMotor():
 
 	def pump_go(direction, delay):
 		if direction == 'forward':
-			PMotor.forward(99) # Направление (direction) может быть forward или backward
-			print("Motor go")
+			try:
+				PMotor.forward(99) # Направление (direction) может быть forward или backward
+				print("Motor go")
+			except Exception as error:
+            	print(error)
+            	print("Unexpected error:")
+    finally:
+        MotorOne.cleanup(False)
 		else:
 			PMotor.backward(80)
 			print("Motor go back")
