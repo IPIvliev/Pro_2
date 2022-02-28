@@ -69,19 +69,19 @@
 								on_press:
 									root.pour_in()
 								on_release:
-									root.pour_out()
+									root.pour_stop()
 							Button:
 								text: 'Стоп'
 								halign: 'center'
 								on_press:
-									root.pour_out()
+									root.pour_stop()
 							Button:
 								text: 'Слить \nв ёмкость'
 								halign: 'center'
 								on_press:
 									root.pour_out()
 								on_release:
-									root.pour_out()
+									root.pour_stop()
 									
 						BoxLayout:
 							cols: 3
