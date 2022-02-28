@@ -10,7 +10,7 @@ step = 23
 direct = 22
 
 vat_speed = float(config['DEFAULT']['vat_speed'])
-distance = 9999
+distance = 9999999
 direction = True
 
 stop = False
