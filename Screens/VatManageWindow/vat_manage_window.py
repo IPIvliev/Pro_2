@@ -7,7 +7,7 @@ class VatManageWindow(Screen):
 	def pour_in(self):
 		print("Clock motor GO")
 		#self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward', 0.1), 0.1)
-		Clock.schedule_once(partial(PumpMotor.pump_go, 'forward', 0.1), 0.1)
+		Clock.schedule_once(partial(PumpMotor.pump_go, 'forward', 0.1), 0.3)
 
 	def pour_out(self):
 		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'backward', 0.1), 0.1)

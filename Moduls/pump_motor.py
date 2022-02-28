@@ -1,5 +1,5 @@
 import time
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 from RpiMotorLib import rpi_dc_lib
 
 # ====== tests for  DC motor driven by TB6612FNG ====
@@ -11,14 +11,12 @@ Standby = 6
 
 Freq = 50
 
-
+# Declare an named instance of class pass a name and motor type
+PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, True, "motor_one")
 
 class PumpMotor():
 
 	def pump_go(direction, delay, ti):
-		# Declare an named instance of class pass a name and motor type
-		PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, True, "motor_one")
-		
 		if direction == 'forward':
 			PMotor.forward(80) # Направление (direction) может быть forward или backward
 			print("Motor go")
