@@ -22,10 +22,10 @@ class PumpMotor():
 				PMotor.forward(99) # Направление (direction) может быть forward или backward
 				print("Motor go")
 			except Exception as error:
-            	print(error)
-            	print("Unexpected error:")
-    finally:
-        MotorOne.cleanup(False)
+				print(error)
+				print("Unexpected error:")
+    		finally:
+        		PMotor.cleanup(False)
 		else:
 			PMotor.backward(80)
 			print("Motor go back")
