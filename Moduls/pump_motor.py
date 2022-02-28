@@ -16,7 +16,7 @@ PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
 
 class PumpMotor():
 
-	def pump_go(direction, delay, ti):
+	def pump_go(direction, delay):
 		if direction == 'forward':
 			PMotor.forward(99) # Направление (direction) может быть forward или backward
 			print("Motor go")
