@@ -30,6 +30,6 @@ class PumpMotor():
 		else:
 			rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 			PMotor.backward(80)
-			print("Motor go back")
+			rpi_dc_lib.TB6612FNGDc.standby(Standby, False)
 		#time.sleep(5)
 		#PMotor.stop(0)
