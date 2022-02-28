@@ -5,6 +5,7 @@ from functools import partial
 
 class VatManageWindow(Screen):
 	def pour_in(self):
+		print("Clock motor GO")
 		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward', 1), 1)
 		#PumpMotor.pump_go('forward', 0.1)
 
