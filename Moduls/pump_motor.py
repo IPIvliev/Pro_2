@@ -12,7 +12,7 @@ Standby = 6
 Freq = 50
 
 # Declare an named instance of class pass a name and motor type
-PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, True, "motor_one")
+PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
 
 class PumpMotor():
 
@@ -22,5 +22,5 @@ class PumpMotor():
 			print("Motor go")
 		else:
 			PMotor.backward(80)
-		time.sleep(5)
+		#time.sleep(5)
 		#PMotor.stop(0)
