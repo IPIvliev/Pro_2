@@ -14,22 +14,13 @@ PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
 class PumpMotor():
 
 	def pump_go(direction, delay, ti):
+		rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 		if direction == 'forward':
-			try:
-				# Declare an named instance of class pass a name and motor type
-				rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
-				
-				PMotor.forward(99) # Направление (direction) может быть forward или backward
-			except Exception as error:
-				print(error)
-				print("Unexpected error:")
-			finally:
-				PMotor.cleanup(False)
-				rpi_dc_lib.TB6612FNGDc.standby(Standby, False)
+			PMotor.forward(99)
 		else:
-			rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
-			PMotor.backward(80)
+			PMotor.backward(99)
 			
-		time.sleep(0.2)
+		time.sleep(0.1)
 		PMotor.stop(0)
+		PMotor.cleanup(False)
 		rpi_dc_lib.TB6612FNGDc.standby(Standby, False)
