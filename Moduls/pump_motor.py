@@ -20,7 +20,7 @@ class PumpMotor():
 		else:
 			PMotor.backward(99)
 			
-		time.sleep(1)
+		time.sleep(0.2)
 		PMotor.stop(0)
 		PMotor.cleanup(False)
 		rpi_dc_lib.TB6612FNGDc.standby(Standby, False)
