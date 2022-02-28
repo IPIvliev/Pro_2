@@ -5,11 +5,11 @@ from functools import partial
 
 class VatManageWindow(Screen):
 	def pour_in(self):
-		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward', 3), 0.1)
+		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward', 1), 1)
 		#PumpMotor.pump_go('forward', 0.1)
 
 	def pour_out(self):
-		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'backward', 3), 0.1)
+		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'backward', 1), 1)
 		#PumpMotor.pump_go('backward', 0.1)
 
 	def stop_pressing(self):

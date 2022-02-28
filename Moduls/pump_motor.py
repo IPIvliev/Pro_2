@@ -21,8 +21,8 @@ class PumpMotor():
 
 	def pump_go(direction, delay, ti):
 		if direction == 'forward':
-			PMotor.forward(Freq) # Направление (direction) может быть forward или backward
+			PMotor.forward(80) # Направление (direction) может быть forward или backward
 		else:
-			PMotor.backward(Freq)
+			PMotor.backward(80)
 		time.sleep(delay)
 		PMotor.stop(0)
