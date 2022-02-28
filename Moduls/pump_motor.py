@@ -22,5 +22,6 @@ class PumpMotor():
 			print("Motor go")
 		else:
 			PMotor.backward(80)
+			print("Motor go back")
 		#time.sleep(5)
 		#PMotor.stop(0)
