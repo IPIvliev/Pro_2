@@ -7,9 +7,6 @@ from RpiMotorLib import rpi_dc_lib
 PWA = 26
 AI1 = 13
 AI2 = 19
-#PWB = 18
-#BI1 = 23
-#BI2 = 24
 Standby = 6
 
 Freq = 50
