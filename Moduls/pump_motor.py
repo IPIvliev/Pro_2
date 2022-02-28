@@ -13,7 +13,7 @@ Freq = 50
 
 class PumpMotor():
 
-	def pump_go(direction, delay):
+	def pump_go(direction, delay, ti):
 		if direction == 'forward':
 			try:
 				# Declare an named instance of class pass a name and motor type
