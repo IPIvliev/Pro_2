@@ -20,6 +20,7 @@ class PumpMotor():
 				rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 				PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
 				PMotor.forward(99) # Направление (direction) может быть forward или backward
+				time.sleep(5)
 				print("Motor go")
 			except Exception as error:
 				print(error)
