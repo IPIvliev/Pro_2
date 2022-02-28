@@ -24,8 +24,8 @@ class PumpMotor():
 			except Exception as error:
 				print(error)
 				print("Unexpected error:")
-    		finally:
-        		PMotor.cleanup(False)
+			finally:
+				PMotor.cleanup(False)
 		else:
 			PMotor.backward(80)
 			print("Motor go back")
