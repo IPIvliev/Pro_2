@@ -1,16 +1,24 @@
-import RPi.GPIO as GPIO
+import GlobalValues
 
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
-led_light = int(config.get("PORTS", "ledPort"))
+test = GlobalValues.TEST
+led_port = GlobalValues.LED_PORT
+
+if test == 0:
+  import RPi.GPIO as GPIO
 
 class LED():
-	GPIO.setmode(GPIO.BCM)
-	GPIO.setup(led_light, GPIO.OUT)
+  if test == 0:
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(led_port, GPIO.OUT)
 
 	def turn_led_on():
-		GPIO.output(led_light, True)
+    if test == 0:
+		  GPIO.output(led_port, True)
+    else:
+      pass
 
 	def turn_led_off():
-		GPIO.output(led_light, False)
+		if test == 0:
+      GPIO.output(led_port, False)
+    else:
+      pass

@@ -1,13 +1,11 @@
 import time
-#import RPi.GPIO as GPIO
+import GlobalValues
 from RpiMotorLib import rpi_dc_lib
 
-# ====== tests for  DC motor driven by TB6612FNG ====
-# TB66 -- GPIO RPI
-PWA = 26
-AI1 = 13
-AI2 = 19
-Standby = 6
+PWA = GlobalValues.PUMPPOWERPORT
+AI1 = GlobalValues.PUMPAI1
+AI2 = GlobalValues.PUMPAI1
+Standby = GlobalValues.PUMPSTANDBY
 
 Freq = 50
 PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")

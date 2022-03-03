@@ -1,8 +1,9 @@
 import RPi.GPIO as gpio
 import time
+import GlobalValues
 
-DT =27
-SCK=17
+DT = GlobalValues.DT
+SCK = GlobalValues.SCK
 
 stop = False
 

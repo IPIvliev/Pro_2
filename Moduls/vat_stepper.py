@@ -1,13 +1,10 @@
 import RPi.GPIO as gpio
+import GlobalValues
 import time
 from threading import Thread
 
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
-
-step = 23
-direct = 22
+direct = GlobalValues.VMD
+step = GlobalValues.VMS
 
 vat_speed = float(config['DEFAULT']['vat_speed'])
 distance = 9999999
@@ -38,10 +35,9 @@ class VatMotor():
             time.sleep(speed)
             gpio.output(step, False)
             StepCounter += 1
-            WaitTimeAccel = speed
          
             #Wait before taking the next step...this controls rotation speed
-            time.sleep(WaitTimeAccel)
+            time.sleep(speed)
 
     def stop_moving():
         global stop

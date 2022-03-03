@@ -1,10 +1,11 @@
 import RPi.GPIO as gpio
+import GlobalValues
 import time
 import threading
 from Moduls.scale import Scale
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
+
+motor_direction = GlobalValues.ZMD
+step = GlobalValues.ZMS
 
 stop = False
 gpio.setmode(gpio.BCM)
@@ -17,10 +18,10 @@ class Motor1():
         gpio.setmode(gpio.BCM)
 
         gpio.setwarnings(False)
-        gpio.setup(16, gpio.OUT)
-        gpio.setup(20, gpio.OUT)
+        gpio.setup(motor_direction, gpio.OUT)
+        gpio.setup(step, gpio.OUT)
         StepCounter = 0
-        gpio.output(16, direction)
+        gpio.output(motor_direction, direction)
         
         global stop
         stop = False
@@ -34,16 +35,14 @@ class Motor1():
             if stop == True:
                 break
             #turning the gpio on and off tells the easy driver to take one step
-            gpio.output(20, True)
+            gpio.output(step, True)
             time.sleep(speed)
-            gpio.output(20, False)
+            gpio.output(step, False)
             StepCounter += 1
             WaitTimeAccel = speed
          
             #Wait before taking the next step...this controls rotation speed
             time.sleep(WaitTimeAccel)
-
-    #mymotortest.motor_move(.005, 200 , False, True, "Full", .05)
 
     # good practise to cleanup GPIO at some point before exit
         #gpio.cleanup()
