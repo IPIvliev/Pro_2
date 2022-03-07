@@ -18,6 +18,7 @@ class PumpMotor():
 			print("Motor forward")
 		else:
 			PMotor.backward(99)
+			print("Motor backward")
 			
 		time.sleep(0.2)
 		PMotor.stop(0)
