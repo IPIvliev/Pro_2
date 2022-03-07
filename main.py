@@ -37,7 +37,6 @@ config = configparser.ConfigParser()
 config.read('printer_config.ini')
 
 class WindowManager(ScreenManager):
-    import RPi.GPIO as GPIO
     developer_mode = int(config['DEFAULT']['developer_mode'])
     vat_speed = config.get("DEFAULT", "vat_speed")
     vat_amount = config.get("DEFAULT", "vat_amount")
@@ -46,7 +45,7 @@ class WindowManager(ScreenManager):
 
 class MainApp(App):
     net_status = 'OffLine'
-
+    import RPi.GPIO as GPIO
     def build(self):
         windows = Builder.load_file('main.kv')
         Ping.callPing(windows)
