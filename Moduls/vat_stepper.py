@@ -6,6 +6,9 @@ from threading import Thread
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
 
+import configparser
+config = configparser.ConfigParser()
+config.read('printer_config.ini')
 vat_speed = float(config['DEFAULT']['vat_speed'])
 distance = 9999999
 direction = True
