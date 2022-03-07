@@ -1,4 +1,4 @@
-import GlobalValues
+import Moduls.GlobalValues
 
 test = GlobalValues.TEST
 light_port = GlobalValues.LIGHT_PORT
