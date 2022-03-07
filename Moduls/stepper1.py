@@ -1,5 +1,5 @@
 import RPi.GPIO as gpio
-import GlobalValues
+import Moduls.GlobalValues as GlobalValues
 import time
 import threading
 from Moduls.scale import Scale

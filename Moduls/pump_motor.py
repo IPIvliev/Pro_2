@@ -1,5 +1,5 @@
 import time
-import GlobalValues
+import Moduls.GlobalValues as GlobalValues
 from RpiMotorLib import rpi_dc_lib
 
 PWA = GlobalValues.PUMPPOWERPORT

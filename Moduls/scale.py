@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 import time
-import GlobalValues
+import Moduls.GlobalValues as GlobalValues
 
 DT = GlobalValues.DT
 SCK = GlobalValues.SCK

@@ -1,5 +1,5 @@
 import time
-import GlobalValues
+import Moduls.GlobalValues as GlobalValues
 from RpiMotorLib import RpiMotorLib
 
 GPIO_pins = (-1, -1) # Microstep Resolution MS1-MS2 -> GPIO Pin
