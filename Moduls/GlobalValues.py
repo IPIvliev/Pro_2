@@ -1,6 +1,3 @@
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
 TEST = 1 # Работает в тестовом режиме без GPIO
 LED_PORT = 22 # Порт для освещение принтера
 LIGHT_PORT = 18 # Порт для управления LED-матрицей
