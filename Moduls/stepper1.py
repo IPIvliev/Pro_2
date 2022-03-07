@@ -3,6 +3,9 @@ import Moduls.GlobalValues as GlobalValues
 import time
 import threading
 from Moduls.scale import Scale
+import configparser
+config = configparser.ConfigParser()
+config.read('printer_config.ini')
 
 motor_direction = GlobalValues.ZMD
 step = GlobalValues.ZMS
