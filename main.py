@@ -45,7 +45,7 @@ class WindowManager(ScreenManager):
 
 class MainApp(App):
     net_status = 'OffLine'
-    import RPi.GPIO as GPIO
+
     def build(self):
         windows = Builder.load_file('main.kv')
         Ping.callPing(windows)
