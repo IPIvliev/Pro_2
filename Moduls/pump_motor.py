@@ -14,10 +14,10 @@ class PumpMotor():
 	def pump_go(direction, delay, ti):
 		rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 		if direction == 'forward':
-			PMotor.forward(99)
+			PMotor.forward(80)
 			print("Motor forward")
 		else:
-			PMotor.backward(99)
+			PMotor.backward(80)
 			print("Motor backward")
 			
 		time.sleep(0.2)
