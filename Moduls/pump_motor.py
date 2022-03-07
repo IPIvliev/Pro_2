@@ -15,6 +15,7 @@ class PumpMotor():
 		rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 		if direction == 'forward':
 			PMotor.forward(99)
+			print("Motor forward")
 		else:
 			PMotor.backward(99)
 			
