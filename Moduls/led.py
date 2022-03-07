@@ -11,14 +11,14 @@ class LED():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(led_port, GPIO.OUT)
 
-	def turn_led_on():
+  def turn_led_on():
     if test == 0:
-		  GPIO.output(led_port, True)
+      GPIO.output(led_port, True)
     else:
       pass
 
-	def turn_led_off():
-		if test == 0:
+  def turn_led_off():
+    if test == 0:
       GPIO.output(led_port, False)
     else:
       pass
