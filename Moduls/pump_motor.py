@@ -8,11 +8,6 @@ AI1 = GlobalValues.PUMPAI1
 AI2 = GlobalValues.PUMPAI1
 Standby = GlobalValues.PUMPSTANDBY
 
-GPIO.setup(Standby, GPIO.OUT)
-GPIO.setup(AI1, GPIO.OUT)
-GPIO.setup(AI2, GPIO.OUT)
-GPIO.setup(PWA, GPIO.OUT)
-
 Freq = 50
 PMotor = rpi_dc_lib.TB6612FNGDc(AI1, AI2, PWA, Freq, False, "motor_one")
 class PumpMotor():
