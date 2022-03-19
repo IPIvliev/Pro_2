@@ -5,7 +5,7 @@ from RpiMotorLib import rpi_dc_lib
 
 PWA = GlobalValues.PUMPPOWERPORT
 AI1 = GlobalValues.PUMPAI1
-AI2 = GlobalValues.PUMPAI1
+AI2 = GlobalValues.PUMPAI2
 Standby = GlobalValues.PUMPSTANDBY
 
 Freq = 50
@@ -23,11 +23,11 @@ class PumpMotor():
 			GPIO.output(AI2, False)
 			
 			GPIO.output(PWA, True)
-			time.sleep(0.01)
-			GPIO.output(PWA, False)
+			time.sleep(1)
+			#GPIO.output(PWA, False)
 	
 			#Wait before taking the next step...this controls rotation speed
-			time.sleep(0.01)
+			time.sleep(0.1)
 			#PMotor.forward(80)
 			#print("Motor forward")
 		else:
