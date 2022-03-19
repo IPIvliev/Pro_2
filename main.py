@@ -25,7 +25,7 @@ from Screens.PrintProcessWindow._popup_finish_printing import PopupFinishPrintin
 from Moduls.ping import Ping
 
 import os
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 #os.environ["KIVY_BCM_DISPMANX_ID"] = "5" #LCD 
 
 #Window.size = (800, 480)
@@ -33,7 +33,7 @@ import RPi.GPIO as GPIO
 Window.top = 0
 Window.left = 0
 #GPIO.setmode(GPIO.BCM)
-GPIO.setup(22, GPIO.OUT)
+
 
 import configparser
 config = configparser.ConfigParser()
