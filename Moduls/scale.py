@@ -1,4 +1,4 @@
-import RPi.GPIO as gpio
+import RPi.GPIO as GPIO
 import time
 import Moduls.GlobalValues as GlobalValues
 
@@ -9,33 +9,34 @@ stop = False
 
 class Scale():
 
-  def readCount():  
+  def readCount():
+    GPIO.setup(SCK, GPIO.OUT)
     i=0
     Count=0
-    gpio.setup(DT, gpio.OUT)
-    gpio.output(DT,1)
-    gpio.output(SCK,0)
-    gpio.setup(DT, gpio.IN)
+    GPIO.setup(DT, GPIO.OUT)
+    GPIO.output(DT,1)
+    GPIO.output(SCK,0)
+    GPIO.setup(DT, GPIO.IN)
 
-    while gpio.input(DT) == 1:
+    while GPIO.input(DT) == 1:
         i=0
     for i in range(24):
             
-          gpio.output(SCK,1)
+          GPIO.output(SCK,1)
           Count=Count<<1
 
-          gpio.output(SCK,0)
+          GPIO.output(SCK,0)
           time.sleep(0.01)
-          if gpio.input(DT) == 0: 
+          if GPIO.input(DT) == 0: 
               Count=Count+1
           
-    gpio.output(SCK,1)
+    GPIO.output(SCK,1)
     Count=Count^0x800000
-    gpio.output(SCK,0)
+    GPIO.output(SCK,0)
     return Count
 
   def scale_stop():
-    gpio.cleanup([27, 17])
+    GPIO.cleanup([27, 17])
 
   def start_scale():
     sample = Scale.readCount()
