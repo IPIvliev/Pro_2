@@ -18,20 +18,20 @@ stop = False
 class VatMotor():
 
     def stepper_go(speed, distance, direction):
-        StepCounter = 0
+        #StepCounter = 0
         gpio.output(direct, direction)
         
         global stop
         stop = False
         
-        while StepCounter < distance:
+        while True:
             if stop == True:
                 break
             #turning the gpio on and off tells the easy driver to take one step
             gpio.output(step, True)
             time.sleep(speed)
             gpio.output(step, False)
-            StepCounter += 1
+            #StepCounter += 1
          
             #Wait before taking the next step...this controls rotation speed
             time.sleep(speed)
