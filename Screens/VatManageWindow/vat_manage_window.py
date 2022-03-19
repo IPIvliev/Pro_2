@@ -3,10 +3,12 @@ from Moduls.pump_motor import PumpMotor
 from kivy.clock import Clock
 from functools import partial
 from threading import Thread
+from Moduls.scale import Scale
 
 class VatManageWindow(Screen):
 	def on_enter(self):
 		self.ids.scale_value.text = "0.00"
+		self.ids.scale_value.text = Clock.schedule_interval(partial(Scale.readCount), 1)
 
 	def pour_in(self):
 		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward'), 0.002)
