@@ -3,15 +3,12 @@ import Moduls.GlobalValues as GlobalValues
 test = GlobalValues.TEST
 light_port = GlobalValues.LIGHT_PORT
 
-#if test == 0:
-#  import RPi.GPIO as GPIO
+if test == 0:
+  import RPi.GPIO as GPIO
 
 class Light():
 
 	def light(self, signal=2):
-		#if test == 0:
-			#GPIO.setmode(GPIO.BCM)
-				
 
 		global LIGHT
 		if signal == 1:
