@@ -57,7 +57,7 @@ class Motor1():
             count = Scale.readCount()
             w=0
             w=(count-sample)/106
-            self.ids.scale_value.text = str(w)
+            self.ids.scale_value.text = str(round(w))
             
             if int(w) > weight:
               Motor1.stop_moving()
