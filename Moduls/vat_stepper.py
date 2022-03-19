@@ -10,7 +10,6 @@ import configparser
 config = configparser.ConfigParser()
 config.read('printer_config.ini')
 vat_speed = float(config['DEFAULT']['vat_speed'])
-distance = 9999999
 direction = True
 
 stop = False
@@ -31,8 +30,7 @@ class VatMotor():
             gpio.output(step, True)
             time.sleep(speed)
             gpio.output(step, False)
-            #StepCounter += 1
-         
+        
             #Wait before taking the next step...this controls rotation speed
             time.sleep(speed)
 
