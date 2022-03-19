@@ -42,12 +42,22 @@
 					BoxLayout:
 						size_hint: 1, 0.7
 
-					BoxLayout:
+					GridLayout:
 						size_hint: 1, 0.3
-						Label:
-							id: scale_label
-							text: 'Вес'
-							font_size: sp(28)
+						rows: 2
+						
+						BoxLayout:
+							size_hint: 1, 0.5
+							Label:
+								id: scale_label
+								text: 'Вес полимер:'
+								font_size: sp(28)
+						BoxLayout:
+							size_hint: 1, 0.5
+							Label:
+								id: scale_value
+								text: '0.00'
+								font_size: sp(28)								
 
 			BoxLayout:
 				size_hint: 0.6, 1
