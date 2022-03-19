@@ -11,7 +11,7 @@ class Light():
 	def light(self, signal=2):
 		if test == 0:
 			#GPIO.setmode(GPIO.BCM)
-			GPIO.setup(light_port, GPIO.OUT)	
+				
 
 		global LIGHT
 		if signal == 1:
