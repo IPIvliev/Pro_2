@@ -11,15 +11,13 @@ config = configparser.ConfigParser()
 config.read('printer_config.ini')
 vat_speed = float(config['DEFAULT']['vat_speed'])
 
-direction = True
-gpio.output(direct, direction)
 stop = False
 
 class VatMotor():
 
     def stepper_go(speed):
         #StepCounter = 0
-        
+        gpio.output(direct, True)
         
         global stop
         stop = False
