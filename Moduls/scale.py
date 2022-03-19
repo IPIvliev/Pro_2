@@ -9,7 +9,7 @@ stop = False
 
 class Scale():
 
-  def readCount(ti):  
+  def readCount():  
     i=0
     Count=0
     gpio.setup(DT, gpio.OUT)
