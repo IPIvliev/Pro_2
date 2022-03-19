@@ -14,22 +14,18 @@ class ZMovingWindow(Screen):
 	def go_10(self):
 		global distance
 		distance = 8
-		print(distance)
 
 	def go_50(self):
 		global distance
 		distance = 40
-		print(distance)
 
 	def go_100(self):
 		global distance
 		distance = 80
-		print(distance)
 
 	def go_1000(self):
 		global distance
 		distance = 800
-		print(distance)
 
 	def by_step(self):
 		global format_of_go
@@ -40,18 +36,16 @@ class ZMovingWindow(Screen):
 		format_of_go = False		
 
 	def motor_go_up(self):
-		print('UP')
 		if format_of_go == True:
-			Clock.schedule_once(partial(ZMovingWindow.motor_go, self, distance, False), 0.1)
+			Clock.schedule_once(partial(ZMovingWindow.motor_go, self, distance, False), 0.2)
 		else:
-			Clock.schedule_once(partial(ZMovingWindow.motor1_go, self, 9999999, False), 0.1)
+			Clock.schedule_once(partial(ZMovingWindow.motor1_go, self, 9999999, False), 0.2)
 			
 	def motor_go_down(self):
-		print('Down')
 		if format_of_go == True:
-			Clock.schedule_once(partial(ZMovingWindow.motor_go, self, distance, True), 0.1)
+			Clock.schedule_once(partial(ZMovingWindow.motor_go, self, distance, True), 0.2)
 		else:
-			Clock.schedule_once(partial(ZMovingWindow.motor1_go, self, 9999999, True), 0.1)
+			Clock.schedule_once(partial(ZMovingWindow.motor1_go, self, 9999999, True), 0.2)
 
 	def stop(self):
 		Motor1.stop_moving()
