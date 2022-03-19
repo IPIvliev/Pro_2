@@ -9,10 +9,7 @@ stop = False
 
 class Scale():
 
-  def readCount():
-    #gpio.setwarnings(False)
-    gpio.setmode(gpio.BCM)
-    gpio.setup(SCK, gpio.OUT)    
+  def readCount():  
     i=0
     Count=0
     gpio.setup(DT, gpio.OUT)

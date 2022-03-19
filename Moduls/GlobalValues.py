@@ -21,3 +21,8 @@ VMS = 23 # Сигнал движения на шаг
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LED_PORT, GPIO.OUT)
 GPIO.setup(LIGHT_PORT, GPIO.OUT)
+GPIO.setup(SCK, gpio.OUT)
+GPIO.setup(ZMD, gpio.OUT)
+GPIO.setup(ZMS, gpio.OUT)
+GPIO.setup(VMS, gpio.OUT)
+GPIO.setup(VMD, gpio.OUT)

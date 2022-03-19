@@ -14,14 +14,10 @@ distance = 9999999
 direction = True
 
 stop = False
-gpio.setmode(gpio.BCM)
 
 class VatMotor():
 
     def stepper_go(speed, distance, direction):
-
-        gpio.setup(step, gpio.OUT)
-        gpio.setup(direct, gpio.OUT)
         StepCounter = 0
         gpio.output(direct, direction)
         

@@ -11,18 +11,12 @@ motor_direction = GlobalValues.ZMD
 step = GlobalValues.ZMS
 
 stop = False
-gpio.setmode(gpio.BCM)
 
 class Motor1():
 
     tenzor_weight = config.get("DEFAULT", "tenzo_weight")
 
     def stepper_go(speed, distance, direction):
-        gpio.setmode(gpio.BCM)
-
-        gpio.setwarnings(False)
-        gpio.setup(motor_direction, gpio.OUT)
-        gpio.setup(step, gpio.OUT)
         StepCounter = 0
         gpio.output(motor_direction, direction)
         
