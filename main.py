@@ -3,11 +3,9 @@ from kivy.config import Config
 Config.read('config.ini')
 
 from kivy.app import App
-#from kivy.uix.gridlayout import GridLayout
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager
-#from kivy.properties import BooleanProperty, StringProperty
 
 from Screens.MainWindow.main_window import MainWindow
 from Screens.ManageWindow.manage_window import ManageWindow
@@ -25,15 +23,9 @@ from Screens.PrintProcessWindow._popup_finish_printing import PopupFinishPrintin
 from Moduls.ping import Ping
 
 import os
-#import RPi.GPIO as GPIO
-#os.environ["KIVY_BCM_DISPMANX_ID"] = "5" #LCD 
 
-#Window.size = (800, 480)
-#Window.borderless = False
 Window.top = 0
 Window.left = 0
-#GPIO.setmode(GPIO.BCM)
-
 
 import configparser
 config = configparser.ConfigParser()
