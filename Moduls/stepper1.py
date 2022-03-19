@@ -24,7 +24,7 @@ class Motor1():
         stop = False
         
         # Start tenzo to prevent damage
-        scaling = threading.Thread(target=Motor1.start_scale, args=(self))
+        scaling = threading.Thread(target=Motor1.start_scale, args=(self, 1))
         scaling.daemon = True
         scaling.start()	
         
@@ -48,7 +48,7 @@ class Motor1():
         global stop
         stop = True
         
-    def start_scale(self):
+    def start_scale(self, t):
         sample = Scale.readCount()
         weight = float(Motor1.tenzor_weight)
         
