@@ -4,6 +4,7 @@ from kivy.clock import Clock
 from functools import partial
 from threading import Thread
 from Moduls.scale import Scale
+import time
 
 class VatManageWindow(Screen):
 	def on_enter(self):
