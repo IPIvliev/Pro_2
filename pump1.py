@@ -4,7 +4,7 @@ import time
 
 PWA = GlobalValues.PUMPPOWERPORT
 AI1 = GlobalValues.PUMPAI1
-AI2 = GlobalValues.PUMPAI1
+AI2 = GlobalValues.PUMPAI2
 Standby = GlobalValues.PUMPSTANDBY
 
 # ===================MAIN===============================
@@ -22,9 +22,6 @@ if __name__ == '__main__':
         print("motor test")
         while True:
             GPIO.output(PWA, True)
-            time.sleep(0.1)
-            GPIO.output(PWA, False)
-            time.sleep(0.1)
         time.sleep(20)
     finally:
         print("Stop test")
