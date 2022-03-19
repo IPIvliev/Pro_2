@@ -21,19 +21,19 @@ class PumpMotor():
 		stop = False
 		if direction == 'forward':
 			while True:
-            	if stop == True:
-                	break
+				if stop == True:
+					break
 				GPIO.output(Standby, True)
-            	#turning the gpio on and off tells the easy driver to take one step
-            	GPIO.output(AI1, True)
+				#turning the gpio on and off tells the easy driver to take one step
+				GPIO.output(AI1, True)
 				GPIO.output(AI2, False)
 				
 				GPIO.output(PWA, True)
-           		time.sleep(speed)
-            	GPIO.output(PWA, False)
-        
-            	#Wait before taking the next step...this controls rotation speed
-            	time.sleep(speed)
+				time.sleep(speed)
+				GPIO.output(PWA, False)
+		
+				#Wait before taking the next step...this controls rotation speed
+				time.sleep(speed)
 			#PMotor.forward(80)
 			#print("Motor forward")
 		else:
