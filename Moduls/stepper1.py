@@ -16,7 +16,7 @@ class Motor1():
 
     tenzor_weight = config.get("DEFAULT", "tenzo_weight")
 
-    def stepper_go(speed, distance, direction):
+    def stepper_go(self, speed, distance, direction):
         StepCounter = 0
         gpio.output(motor_direction, direction)
         
@@ -24,7 +24,7 @@ class Motor1():
         stop = False
         
         # Start tenzo to prevent damage
-        scaling = threading.Thread(target=Motor1.start_scale, args=( ))
+        scaling = threading.Thread(target=Motor1.start_scale, args=(self))
         scaling.daemon = True
         scaling.start()	
         
@@ -48,7 +48,7 @@ class Motor1():
         global stop
         stop = True
         
-    def start_scale():
+    def start_scale(self):
         sample = Scale.readCount()
         weight = float(Motor1.tenzor_weight)
         
@@ -58,6 +58,7 @@ class Motor1():
             w=0
             w=(count-sample)/106
             print(w)
+            self.ids.scale_value.text = str(w)
             
             if int(w) > weight:
               Motor1.stop_moving()

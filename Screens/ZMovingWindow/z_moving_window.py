@@ -57,8 +57,8 @@ class ZMovingWindow(Screen):
 		Motor1.stop_moving()
 
 	def motor_go(self, distance, direction, ti):
-		Motor.stepper_go(0.00001, distance, direction)
+		Motor.stepper_go(0.0001, distance, direction)
 	def motor1_go(self, distance, direction, ti):
-		printing = threading.Thread(target=Motor1.stepper_go, args=(0.00001, distance, direction))
+		printing = threading.Thread(target=Motor1.stepper_go, args=(self, 0.00001, distance, direction))
 		printing.daemon = True
 		printing.start()		

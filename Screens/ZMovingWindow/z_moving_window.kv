@@ -34,7 +34,29 @@
 			            rgba: 0.1, 0.1, 0.1, 1
 			        Rectangle:
 			            pos: self.pos
-			            size: self.size				
+			            size: self.size		
+				GridLayout:
+					rows: 2
+
+					BoxLayout:
+						size_hint: 1, 0.7
+
+					GridLayout:
+						size_hint: 1, 0.3
+						rows: 2
+						
+						BoxLayout:
+							size_hint: 1, 0.5
+							Label:
+								id: scale_label
+								text: 'Вес полимера:'
+								font_size: sp(28)
+						BoxLayout:
+							size_hint: 1, 0.5
+							Label:
+								id: scale_value
+								text: ''
+								font_size: sp(28)		
 
 			BoxLayout:
 				size_hint: 0.7, 1
