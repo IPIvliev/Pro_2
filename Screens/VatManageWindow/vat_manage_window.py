@@ -8,7 +8,7 @@ from Moduls.scale import Scale
 class VatManageWindow(Screen):
 	def on_enter(self):
 		self.ids.scale_value.text = "0.00"
-		scale_value = Clock.schedule_interval(partial(Scale.readCount), 1)
+		scale_value = Clock.schedule_interval(partial(Scale.readCount()), 0.1)
 		self.ids.scale_value.text = str(scale_value)
 
 	def pour_in(self):
