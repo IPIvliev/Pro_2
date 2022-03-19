@@ -41,5 +41,4 @@ class VatMotor():
 
     def go():
         moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
-        moving.daemon = False
         moving.start()
