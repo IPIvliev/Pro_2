@@ -15,15 +15,16 @@ class PumpMotor():
 	def pump_go(direction, delay, ti):
 		#rpi_dc_lib.TB6612FNGDc.standby(Standby, True)
 		stop = False
+		GPIO.output(Standby, True)
 		if direction == 'forward':
 
-			GPIO.output(Standby, True)
+			
 			#turning the gpio on and off tells the easy driver to take one step
 			GPIO.output(AI1, True)
 			GPIO.output(AI2, False)
 			
 			GPIO.output(PWA, True)
-			time.sleep(1)
+			time.sleep(0.1)
 			#GPIO.output(PWA, False)
 	
 			#Wait before taking the next step...this controls rotation speed
