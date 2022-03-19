@@ -9,7 +9,7 @@ if test == 0:
 class Light():
 
 	def light(self, signal=2):
-		if test == 0:
+		#if test == 0:
 			#GPIO.setmode(GPIO.BCM)
 				
 
