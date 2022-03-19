@@ -32,7 +32,7 @@ import RPi.GPIO as GPIO
 #Window.borderless = False
 Window.top = 0
 Window.left = 0
-GPIO.setmode(GPIO.BCM)
+#GPIO.setmode(GPIO.BCM)
 
 import configparser
 config = configparser.ConfigParser()
