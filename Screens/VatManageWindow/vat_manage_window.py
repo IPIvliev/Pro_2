@@ -16,5 +16,5 @@ class VatManageWindow(Screen):
 		self.event.cancel()
 		self.event = Clock.schedule_once(partial(PumpMotor.pump_stop), 0.01)
 
-    def __init__(self,**kwargs):
+	def __init__(self,**kwargs):
 		self.ids.scale_value.text = 0.00
