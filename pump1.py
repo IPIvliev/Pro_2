@@ -20,8 +20,8 @@ if __name__ == '__main__':
         GPIO.output(AI2, False)
         time.sleep(2)
         print("motor test")
-        while True:
-            GPIO.output(PWA, True)
+        #while True:
+        GPIO.output(PWA, True)
         time.sleep(20)
     finally:
         print("Stop test")
