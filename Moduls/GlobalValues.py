@@ -18,4 +18,5 @@ ZMS = 20 # Сигнал движения на шаг
 VMD = 22 # Сигнал направления
 VMS = 23 # Сигнал движения на шаг
 
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(LIGHT_PORT, GPIO.OUT)
