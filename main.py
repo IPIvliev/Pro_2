@@ -33,7 +33,7 @@ import RPi.GPIO as GPIO
 Window.top = 0
 Window.left = 0
 #GPIO.setmode(GPIO.BCM)
-GPIO.setup(light_port, GPIO.OUT)
+GPIO.setup(22, GPIO.OUT)
 
 import configparser
 config = configparser.ConfigParser()
