@@ -1,3 +1,4 @@
+import RPi.GPIO as GPIO
 import time
 import Moduls.GlobalValues as GlobalValues
 from RpiMotorLib import rpi_dc_lib
