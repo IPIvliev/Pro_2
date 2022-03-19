@@ -7,9 +7,6 @@ if test == 0:
   import RPi.GPIO as GPIO
 
 class LED():
-  if test == 0:
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(led_port, GPIO.OUT)
 
   def turn_led_on():
     if test == 0:
