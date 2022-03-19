@@ -39,13 +39,15 @@
 				GridLayout:
 					cols: 2
 
-					GridLayout:
+					BoxLayout:
+						size_hint: 1, 0.7
 
-					Label:
-						id: temp_label
-						text: 'Вес'
-						font_size: sp(28)
-						color: 0,0,0,0.8
+					BoxLayout:
+						size_hint: 1, 0.3
+						Label:
+							id: scale_label
+							text: 'Вес'
+							font_size: sp(28)
 
 			BoxLayout:
 				size_hint: 0.6, 1
