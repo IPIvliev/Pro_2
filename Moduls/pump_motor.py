@@ -9,7 +9,7 @@ Standby = GlobalValues.PUMPSTANDBY
 
 class PumpMotor():
 
-	def pump_go(direction, delay, ti):
+	def pump_go(direction, ti):
 		stop = False
 		GPIO.output(Standby, True)
 		if direction == 'forward':
@@ -18,14 +18,14 @@ class PumpMotor():
 			GPIO.output(AI2, False)
 			
 			GPIO.output(PWA, True)
-			time.sleep(0.0002)
+			time.sleep(0.002)
 
 		else:
 			GPIO.output(AI1, False)
 			GPIO.output(AI2, True)
 			
 			GPIO.output(PWA, True)
-			time.sleep(0.0002)
+			time.sleep(0.002)
 
 	def pump_stop(ti):
 		GPIO.output(PWA, False)
