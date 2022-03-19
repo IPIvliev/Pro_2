@@ -30,11 +30,11 @@ class PumpMotor():
 				GPIO.output(AI2, False)
 				
 				GPIO.output(PWA, True)
-				time.sleep(speed)
+				time.sleep(0.01)
 				GPIO.output(PWA, False)
 		
 				#Wait before taking the next step...this controls rotation speed
-				time.sleep(speed)
+				time.sleep(0.01)
 			#PMotor.forward(80)
 			#print("Motor forward")
 		else:
