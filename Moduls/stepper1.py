@@ -57,7 +57,6 @@ class Motor1():
             count = Scale.readCount()
             w=0
             w=(count-sample)/106
-            print(w)
             self.ids.scale_value.text = str(w)
             
             if int(w) > weight:
@@ -67,4 +66,4 @@ class Motor1():
             if stop == True:
               Scale.scale_stop()
               break
-            time.sleep(0.1)
+            time.sleep(0.3)
