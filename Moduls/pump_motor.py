@@ -44,11 +44,11 @@ class PumpMotor():
 		#PMotor.cleanup(False)
 		#rpi_dc_lib.TB6612FNGDc.standby(Standby, False)
 
-    def stop_moving():
-        global stop
-        stop = True
+	def stop_moving():
+		global stop
+		stop = True
 
-    def go():
-        moving = Thread(target=PumpMotor.stepper_go, args=(vat_speed, distance, direction))
-        moving.daemon = True
-        moving.start()
+	def go():
+		moving = Thread(target=PumpMotor.stepper_go, args=(vat_speed, distance, direction))
+		moving.daemon = True
+		moving.start()
