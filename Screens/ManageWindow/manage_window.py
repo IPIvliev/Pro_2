@@ -18,4 +18,4 @@ class ManageWindow(Screen):
 			VatMotor.go()
 		elif self.vat_round_toggle.state == 'normal':
 			self.vat_round_toggle.text = 'Выключено'
-			#VatMotor.stop_moving()
+			VatMotor.stop_moving()
