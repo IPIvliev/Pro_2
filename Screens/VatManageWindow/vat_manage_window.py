@@ -9,7 +9,7 @@ import time
 class VatManageWindow(Screen):
 	def on_enter(self):
 		self.ids.scale_value.text = "0.00"
-		Clock.schedule_interval(partial(VatManageWindow.start_scale, self), 0.1)
+		Clock.schedule_interval(partial(VatManageWindow.start_scale, self), 1)
 		
 
 	def pour_in(self):
@@ -25,6 +25,6 @@ class VatManageWindow(Screen):
 	def start_scale(self, ti):
 		sample = Scale.readCount()
 		time.sleep(0.1)
-		w = sample/106
+		w = sample
 		self.ids.scale_value.text = str(w)
 		time.sleep(0.1)
