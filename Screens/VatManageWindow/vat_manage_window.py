@@ -30,6 +30,6 @@ class VatManageWindow(Screen):
 	def start_scale(self, scale, ti):
 		sample = Scale.readCount()
 		time.sleep(0.1)
-		w = sample/106
-		self.ids.scale_value.text = str(w)
+		w = (scale - sample)/106
+		self.ids.scale_value.text = str(round(w))
 		time.sleep(0.1)
