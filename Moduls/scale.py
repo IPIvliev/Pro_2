@@ -31,7 +31,7 @@ class Scale():
           Count=Count<<1
 
           GPIO.output(SCK,0)
-          time.sleep(0.01)
+          time.sleep(0.1)
           if GPIO.input(DT) == 0: 
               Count=Count+1
           
