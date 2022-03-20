@@ -117,7 +117,7 @@ class Print():
 		#Distance.check_distance()
 
 		print('Z идёт вниз до срабатывания тензо датчика')
-		Print.z_go_stepper1(self, 400000)
+		Print.z_go_stepper1(self, 400)
 		print('Z останавливается')
 
 		# Перемещаем платформу на толщину слоя для начала печати первого слоя
