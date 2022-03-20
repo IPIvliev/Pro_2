@@ -25,7 +25,7 @@ class Motor1():
         
         # Start tenzo to prevent damage
         print(distance)
-        if distance != 40000:
+        if distance != 400000:
             scaling = threading.Thread(target=Motor1.start_scale, args=(self, 1))
             scaling.daemon = True
             scaling.start()	
