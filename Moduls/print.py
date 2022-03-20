@@ -162,9 +162,9 @@ class Print():
 		print('Z перемещается вверх на', int(z_layer), 'шагов')
 		Motor.stepper_go(0.00001, int(z_layer), False)
 
-	def z_go_stepper1(z_layer):
+	def z_go_stepper1(self, z_layer):
 		print('Z перемещается вверх на', int(z_layer), 'шагов')
-		Motor1.stepper_go(0.00001, int(z_layer), False)
+		Motor1.stepper_go(self, 0.00001, int(z_layer), False)
 
 	def after_printing(self, z_height):
 		print('Двигаем печатную платформу вверх на', z_height, 'шагов')

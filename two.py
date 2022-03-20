@@ -23,7 +23,7 @@ Builder.load_string("""
 
 class PrinterLayout(Screen):
     def go_two(a, self):
-        print(a)
+        #print(a)
         self.ids.img.source = a
 
     def __init__(self, **kwargs):
