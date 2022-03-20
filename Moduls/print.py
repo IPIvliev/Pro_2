@@ -65,7 +65,7 @@ class Print():
 		self.manager.screens[9].ids.layer_img.source = 'Static/Images/black.png'
 
 		# Подготавливаем печатную платформу. Проверяем парарельность, идём вниз до ванны
-		Print.prepearing_for_printing(layer_thinkness)
+		Print.prepearing_for_printing(self, layer_thinkness)
 
 		# Экспонируем слои на дисплей
 		with os.scandir(temp_dir) as files:
