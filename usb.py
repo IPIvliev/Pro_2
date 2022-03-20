@@ -1,22 +1,13 @@
-import os
-import pyudev
-from glob import glob
- 
-def main():
-    context = pyudev.Context()
-    monitor = pyudev.Monitor.from_netlink(context)
-    monitor.filter_by(subsystem='usb')
-    c=0
-    for device in iter(monitor.poll, None):
- 
-        if device.action == 'add' and c == 0:
-            
-            path = glob("/media/pi/*/")
-            print(path[0])
-            c = 1
- 
-        if device.action == 'remove':
-            c = 0
- 
-if __name__ == '__main__':
-    main()
+import re
+import subprocess
+device_re = re.compile("Bus\s+(?P<bus>\d+)\s+Device\s+(?P<device>\d+).+ID\s(?P<id>\w+:\w+)\s(?P<tag>.+)$", re.I)
+df = subprocess.check_output("lsusb")
+devices = []
+for i in df.split('\n'):
+    if i:
+        info = device_re.match(i)
+        if info:
+            dinfo = info.groupdict()
+            dinfo['device'] = '/dev/bus/usb/%s/%s' % (dinfo.pop('bus'), dinfo.pop('device'))
+            devices.append(dinfo)
+print devices
