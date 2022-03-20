@@ -9,9 +9,11 @@ import time
 class VatManageWindow(Screen):
 	def on_enter(self):
 		self.ids.scale_value.text = "0.00"
-		event = Clock.schedule_interval(partial(VatManageWindow.start_scale, self), 1)
+		global EVENT
+		EVENT = Clock.schedule_interval(partial(VatManageWindow.start_scale, self), 1)
 	
 	def on_pre_leave(self):
+		global EVENT
 		event.cancel()
 
 	def pour_in(self):
