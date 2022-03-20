@@ -110,14 +110,14 @@ class Print():
 		global pause
 		pause = not pause
 
-	def prepearing_for_printing(layer_thinkness):
+	def prepearing_for_printing(self, layer_thinkness):
 		print('Проверяем парарельность печатающей платформы. Если в допусках, то начинаем печать')
 
 		print('Проверяем наличие полимера в ванной. Если достоточно, начинаем печать, иначе доливаем')
 		#Distance.check_distance()
 
 		print('Z идёт вниз до срабатывания тензо датчика')
-		Print.z_go_stepper1(400000)
+		Print.z_go_stepper1(self, 400000)
 		print('Z останавливается')
 
 		# Перемещаем платформу на толщину слоя для начала печати первого слоя
