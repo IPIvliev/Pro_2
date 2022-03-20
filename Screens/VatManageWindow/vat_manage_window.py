@@ -8,9 +8,10 @@ import time
 
 class VatManageWindow(Screen):
 	def on_enter(self):
+		scale = Scale.readCount()
 		self.ids.scale_value.text = "0.00"
 		global EVENT
-		EVENT = Clock.schedule_interval(partial(VatManageWindow.start_scale, self), 1)
+		EVENT = Clock.schedule_interval(partial(VatManageWindow.start_scale, self, scale), 1)
 	
 	def on_pre_leave(self):
 		global EVENT
@@ -26,9 +27,9 @@ class VatManageWindow(Screen):
 		self.event.cancel()
 		self.event = Clock.schedule_once(partial(PumpMotor.pump_stop), 0.01)
 
-	def start_scale(self, ti):
+	def start_scale(self, scale, ti):
 		sample = Scale.readCount()
 		time.sleep(0.1)
-		w = sample
+		w = sample/106
 		self.ids.scale_value.text = str(w)
 		time.sleep(0.1)
