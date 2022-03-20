@@ -11,7 +11,7 @@ def main():
  
         if device.action == 'add' and c == 0:
             
-            path = glob("/media/fox/*/")
+            path = glob("/media/pi/*/")
             print(path[0])
             c = 1
  
