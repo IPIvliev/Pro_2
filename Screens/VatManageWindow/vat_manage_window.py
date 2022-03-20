@@ -14,7 +14,7 @@ class VatManageWindow(Screen):
 	
 	def on_pre_leave(self):
 		global EVENT
-		event.cancel()
+		EVENT.cancel()
 
 	def pour_in(self):
 		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward'), 0.002)
