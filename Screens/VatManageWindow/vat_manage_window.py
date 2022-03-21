@@ -2,7 +2,6 @@ from kivy.uix.screenmanager import Screen
 from Moduls.pump_motor import PumpMotor
 from kivy.clock import Clock
 from functools import partial
-from threading import Thread
 from Moduls.scale import Scale
 import time
 
