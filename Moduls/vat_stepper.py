@@ -41,7 +41,7 @@ class VatMotor():
     def stop_moving():
         global stop
         stop = True
-        VatMotor.queue.put(stop)
+        #VatMotor.queue.put(stop)
 
     def go():
         
