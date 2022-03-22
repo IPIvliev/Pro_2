@@ -2,6 +2,7 @@ import RPi.GPIO as gpio
 import Moduls.GlobalValues as GlobalValues
 import time
 from threading import Thread
+import threading
 
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
