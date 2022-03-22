@@ -6,6 +6,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager
+import threading
 
 from Screens.MainWindow.main_window import MainWindow
 from Screens.ManageWindow.manage_window import ManageWindow
@@ -40,7 +41,8 @@ class WindowManager(ScreenManager):
 
 class MainApp(App):
     net_status = 'OffLine'
-
+    n_thread =  threading.active_count()
+    print(n_thread)
     def build(self):
         windows = Builder.load_file('main.kv')
         Ping.callPing(windows)
