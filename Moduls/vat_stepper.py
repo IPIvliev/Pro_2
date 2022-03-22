@@ -3,6 +3,7 @@ import Moduls.GlobalValues as GlobalValues
 import time
 from threading import Thread
 import threading
+import multiprocessing
 
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
@@ -41,7 +42,9 @@ class VatMotor():
         stop = True
 
     def go():
+        # moving = multiprocessing.Process(target=VatMotor.stepper_go, args=(vat_speed, direction))
         moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
         moving.start()
+        moving.join()
         n_thread =  threading.active_count()
         print(n_thread)
