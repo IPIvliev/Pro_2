@@ -39,7 +39,7 @@ class VatManageWindow(Screen):
 		while long < i:
 			sample = Scale.readCount()
 			time.sleep(0.1)
-			i++
+			i += 1
 			w = (scale - sample)/106
 			self.ids.scale_value.text = str(round(w))
 			time.sleep(0.1)
