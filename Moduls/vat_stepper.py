@@ -42,3 +42,5 @@ class VatMotor():
     def go():
         moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
         moving.start()
+        n_thread =  threading.active_count()
+        print(n_thread)
