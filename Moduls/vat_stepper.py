@@ -27,6 +27,7 @@ class VatMotor():
         stop = False
         
         while True:
+            stop = queue.get()
             if stop == True:
                 break
             #turning the gpio on and off tells the easy driver to take one step
@@ -40,10 +41,12 @@ class VatMotor():
     def stop_moving():
         global stop
         stop = True
+        queue.put(stop)
 
     def go():
-        # moving = multiprocessing.Process(target=VatMotor.stepper_go, args=(vat_speed, direction))
-        moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
+        queue = multiprocessing.Queue()
+        moving = multiprocessing.Process(target=VatMotor.stepper_go, args=(vat_speed, direction))
+        # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
         moving.start()
         # moving.join()
         n_thread =  threading.active_count()
