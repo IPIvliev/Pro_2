@@ -45,6 +45,6 @@ class VatMotor():
         # moving = multiprocessing.Process(target=VatMotor.stepper_go, args=(vat_speed, direction))
         moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
         moving.start()
-        moving.join()
+        # moving.join()
         n_thread =  threading.active_count()
         print(n_thread)
