@@ -27,7 +27,9 @@ class VatMotor():
         stop = False
         
         while True:
-            stop = VatMotor.queue.get()
+            #stop = VatMotor.queue.get()
+            print(VatMotor.queue)
+            print(VatMotor.queue.get())
             if stop == True:
                 break
             #turning the gpio on and off tells the easy driver to take one step
