@@ -59,7 +59,7 @@ class VatMotor():
         #moving.start()
         # moving.join()
 
-        asyncio.run(stepper_go(vat_speed, direction))
+        asyncio.run(VatMotor.stepper_go(vat_speed, direction))
 
         n_thread =  threading.active_count()
         print(n_thread)
