@@ -10,7 +10,6 @@ format_of_go = True
 
 class ZMovingWindow(Screen):
 
-
 	def go_10(self):
 		global distance
 		distance = 8
