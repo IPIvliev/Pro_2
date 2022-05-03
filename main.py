@@ -25,16 +25,7 @@ from Screens.PrintProcessWindow._popup_finish_printing import PopupFinishPrintin
 Window.top = 0
 Window.left = 0
 
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
-
 class WindowManager(ScreenManager):
-    developer_mode = int(config['DEFAULT']['developer_mode'])
-    vat_speed = config.get("DEFAULT", "vat_speed")
-    vat_amount = config.get("DEFAULT", "vat_amount")
-    lift_distance = config.get("DEFAULT", "lift_distance")
-    z_step_mm = config.get("DEFAULT", "z_step_mm")
 
 class MainApp(App):
     net_status = 'OffLine'
