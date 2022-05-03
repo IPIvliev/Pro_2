@@ -54,7 +54,7 @@ class VatMotor():
         if stop == False:
             moving.start()
             time.sleep(3)
-            moving.terminate()
+            moving.kill()
             # moving.join()
         else:
             moving.terminate()
