@@ -7,11 +7,11 @@ config_file = open('printer_config.ini', 'w')
 
 class DeveloperWindow(Screen):
 
-    developer_mode = int(config['DEFAULT']['developer_mode'])
-    vat_speed = config.get("DEFAULT", "vat_speed")
-    vat_amount = config.get("DEFAULT", "vat_amount")
-    lift_distance = config.get("DEFAULT", "lift_distance")
-    z_step_mm = config.get("DEFAULT", "z_step_mm")	
+	developer_mode = int(config['DEFAULT']['developer_mode'])
+	vat_speed = config.get("DEFAULT", "vat_speed")
+	vat_amount = config.get("DEFAULT", "vat_amount")
+	lift_distance = config.get("DEFAULT", "lift_distance")
+	z_step_mm = config.get("DEFAULT", "z_step_mm")	
 
 	def save_params(self):
 		vat_speed = self.ids.vat_speed_input.text
