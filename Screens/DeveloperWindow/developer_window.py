@@ -1,7 +1,17 @@
 from kivy.uix.screenmanager import Screen
 import configparser
 
+config = configparser.ConfigParser()
+config.read('printer_config.ini')
+config_file = open('printer_config.ini', 'w')
+
 class DeveloperWindow(Screen):
+
+    developer_mode = int(config['DEFAULT']['developer_mode'])
+    vat_speed = config.get("DEFAULT", "vat_speed")
+    vat_amount = config.get("DEFAULT", "vat_amount")
+    lift_distance = config.get("DEFAULT", "lift_distance")
+    z_step_mm = config.get("DEFAULT", "z_step_mm")	
 
 	def save_params(self):
 		vat_speed = self.ids.vat_speed_input.text
@@ -13,9 +23,9 @@ class DeveloperWindow(Screen):
 		vat_vat_z_delay = self.ids.vat_z_delay_input.text
 		vat_tenzo_weight = self.ids.tenzo_weight_input.text
 
-		config = configparser.ConfigParser()
-		config.read('printer_config.ini')
-		config_file = open('printer_config.ini', 'w')
+		# config = configparser.ConfigParser()
+		# config.read('printer_config.ini')
+		# config_file = open('printer_config.ini', 'w')
 		
 
 		config.set("DEFAULT", "vat_speed", vat_speed)

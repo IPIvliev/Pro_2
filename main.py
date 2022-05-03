@@ -26,7 +26,7 @@ Window.top = 0
 Window.left = 0
 
 class WindowManager(ScreenManager):
-    developer_mode = 1
+    pass
 
 class MainApp(App):
     net_status = 'OffLine'
