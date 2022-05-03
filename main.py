@@ -30,7 +30,7 @@ config = configparser.ConfigParser()
 config.read('printer_config.ini')
 
 class WindowManager(ScreenManager):
-    developer_mode = int(config['DEFAULT']['developer_mode'])
+    developer_mode = 0
     vat_speed = config.get("DEFAULT", "vat_speed")
     vat_amount = config.get("DEFAULT", "vat_amount")
     lift_distance = config.get("DEFAULT", "lift_distance")
