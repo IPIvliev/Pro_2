@@ -38,6 +38,7 @@ class VatMotor():
             if _STOP == True:
                 break
             #turning the gpio on and off tells the easy driver to take one step
+            await asyncio.sleep(1)
             gpio.output(step, True)
             time.sleep(speed)
             gpio.output(step, False)
@@ -47,11 +48,7 @@ class VatMotor():
 
     def stop_moving():
         print("Start stopping")
-        for proc in psutil.process_iter():
-            # check whether the process name matches
-            print(proc.name())
-            if proc.name() == 'VatSpin':
-                proc.kill()
+
 
     def go():
         # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
