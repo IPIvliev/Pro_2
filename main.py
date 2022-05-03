@@ -27,7 +27,7 @@ Window.left = 0
 
 import configparser
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('printer_config.ini')
 print(config)
 print("Config")
 print(config.sections())
