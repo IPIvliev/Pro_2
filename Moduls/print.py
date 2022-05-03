@@ -22,9 +22,10 @@ config = configparser.ConfigParser()
 config.read('printer_config.ini')
 
 class Print():
-	z_step_mm = config.get("DEFAULT", "z_step_mm") # Сколько мм в 1 шаге ШПВ
-	vat_delay = config.get("DEFAULT", "vat_delay") # Задержка выключения поворота ванны после окончания подъёма по оси Z
-	vat_z_delay = config.get("DEFAULT", "vat_z_delay") # Задержка между началом поворота ванны и началом подъёма платформы
+	z_step_mm = 0.00125 # Сколько мм в 1 шаге ШПВ
+	vat_delay = 0.5 # Задержка выключения поворота ванны после окончания подъёма по оси Z
+#	vat_z_delay = config.get("DEFAULT", "vat_z_delay") # Задержка между началом поворота ванны и началом подъёма платформы
+	vat_z_delay = 0.5 # Задержка между началом поворота ванны и началом подъёма платформы
 
 	def unzip(photon):
 		pool = Pool(3)
