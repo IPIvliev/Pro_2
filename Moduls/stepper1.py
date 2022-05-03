@@ -3,9 +3,6 @@ import Moduls.GlobalValues as GlobalValues
 import time
 import threading
 from Moduls.scale import Scale
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
 
 motor_direction = GlobalValues.ZMD
 step = GlobalValues.ZMS
@@ -13,8 +10,6 @@ step = GlobalValues.ZMS
 stop = False
 
 class Motor1():
-
-    tenzor_weight = config.get("DEFAULT", "tenzo_weight")
 
     def stepper_go(self, speed, distance, direction):
         StepCounter = 0
@@ -52,7 +47,7 @@ class Motor1():
         
     def start_scale(self, t):
         sample = Scale.readCount()
-        weight = float(Motor1.tenzor_weight)
+        weight = float(100)
         
         while True:
 
