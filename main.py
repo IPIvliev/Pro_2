@@ -20,9 +20,7 @@ from Screens.PrintProcessWindow.print_process_window import PrintProcessWindow
 from Screens.NetWindow.net_window import NetWindow
 from Screens.PrintProcessWindow._popup_finish_printing import PopupFinishPrinting
 
-from Moduls.ping import Ping
-
-import os
+# from Moduls.ping import Ping
 
 Window.top = 0
 Window.left = 0
@@ -30,9 +28,10 @@ Window.left = 0
 import configparser
 config = configparser.ConfigParser()
 config.read('printer_config.ini')
+print(config)
 
 class WindowManager(ScreenManager):
-    developer_mode = int(config['DEFAULT']['developer_mode'])
+    developer_mode = 0
     vat_speed = config.get("DEFAULT", "vat_speed")
     vat_amount = config.get("DEFAULT", "vat_amount")
     lift_distance = config.get("DEFAULT", "lift_distance")
@@ -43,7 +42,7 @@ class MainApp(App):
 
     def build(self):
         windows = Builder.load_file('main.kv')
-        Ping.callPing(windows)
+        # Ping.callPing(windows)
 
         return windows
 
