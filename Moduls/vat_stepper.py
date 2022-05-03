@@ -45,8 +45,10 @@ class VatMotor():
             time.sleep(speed)
 
     def stop_moving():
+        print("Start stopping")
         for proc in psutil.process_iter():
             # check whether the process name matches
+            print(proc.name())
             if proc.name() == 'VatSpin':
                 proc.kill()
 
