@@ -5,6 +5,7 @@ from threading import Thread
 import threading
 import multiprocessing
 import psutil
+import asyncio
 
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
@@ -20,7 +21,7 @@ stop = False
 
 class VatMotor():
     #queue = multiprocessing.Queue()
-    def stepper_go(speed, direction):
+    async def stepper_go(speed, direction):
         #StepCounter = 0
         gpio.output(direct, direction)
 
@@ -54,8 +55,11 @@ class VatMotor():
 
     def go():
         # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
-        moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
-        moving.start()
+        #moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
+        #moving.start()
         # moving.join()
+
+        asyncio.run(stepper_go(vat_speed, direction))
+
         n_thread =  threading.active_count()
         print(n_thread)
