@@ -53,6 +53,8 @@ class VatMotor():
         # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
         if stop == False:
             moving.start()
+            time.sleep(3)
+            moving.terminate()
             # moving.join()
         else:
             moving.terminate()
