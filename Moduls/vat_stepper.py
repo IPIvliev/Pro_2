@@ -49,14 +49,15 @@ class VatMotor():
         #VatMotor.queue.put(stop)
 
     def go(stop):
-        moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
+        
         # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
         if stop == False:
+            moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
             moving.start()
             time.sleep(3)
             moving.kill()
             # moving.join()
         else:
-            moving.terminate()
+            moving.kill()
         n_thread =  threading.active_count()
         print(n_thread)
