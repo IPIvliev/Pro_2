@@ -15,7 +15,7 @@ class ManageWindow(Screen):
 	def round_vat(self):
 		if self.vat_round_toggle.state == 'down':
 			self.vat_round_toggle.text = 'Включено'
-			VatMotor.go(False)
+			VatMotor.go()
 		elif self.vat_round_toggle.state == 'normal':
 			self.vat_round_toggle.text = 'Выключено'
-			VatMotor.go(True)
+			VatMotor.stop_moving()

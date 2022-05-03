@@ -4,6 +4,7 @@ import time
 from threading import Thread
 import threading
 import multiprocessing
+import psutil
 
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
@@ -44,20 +45,15 @@ class VatMotor():
             time.sleep(speed)
 
     def stop_moving():
-        global stop
-        stop = True
-        #VatMotor.queue.put(stop)
+        for proc in psutil.process_iter():
+            # check whether the process name matches
+            if proc.name() == 'VatSpin':
+                proc.kill()
 
-    def go(stop):
-        
+    def go():
         # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
-        if stop == False:
-            moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
-            moving.start()
-            time.sleep(3)
-            moving.kill()
-            # moving.join()
-        else:
-            moving.kill()
+        moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
+        moving.start()
+        # moving.join()
         n_thread =  threading.active_count()
         print(n_thread)
