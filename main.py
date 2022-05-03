@@ -41,7 +41,7 @@ class MainApp(App):
 
     def build(self):
         windows = Builder.load_file('main.kv')
-        Ping.callPing(windows)
+        # Ping.callPing(windows)
 
         return windows
 
