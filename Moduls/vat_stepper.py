@@ -23,7 +23,7 @@ class VatMotor():
         #StepCounter = 0
         gpio.output(direct, direction)
 
-        name = current_process().name
+        name = multiprocessing.current_process().name
         print(name, 'Starting')
         
         global stop
