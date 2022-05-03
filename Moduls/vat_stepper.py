@@ -22,6 +22,9 @@ class VatMotor():
     def stepper_go(speed, direction):
         #StepCounter = 0
         gpio.output(direct, direction)
+
+        name = current_process().name
+        print(name, 'Starting')
         
         global stop
         stop = False
