@@ -14,8 +14,8 @@ class DeveloperWindow(Screen):
 		vat_tenzo_weight = self.ids.tenzo_weight_input.text
 
 		config = configparser.ConfigParser()
-		config.read('printer_config.ini')
-		config_file = open('printer_config.ini', 'w')
+		config.read('printer.ini')
+		config_file = open('printer.ini', 'w')
 		
 
 		config.set("DEFAULT", "vat_speed", vat_speed)

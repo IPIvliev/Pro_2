@@ -19,7 +19,7 @@ stop = False
 # Получаем параметры работы швп по Z
 import configparser
 config = configparser.ConfigParser()
-config.read('printer_config.ini')
+config.read('printer.ini')
 
 class Print():
 	z_step_mm = config.get("DEFAULT", "z_step_mm") # Сколько мм в 1 шаге ШПВ
