@@ -20,9 +20,7 @@ from Screens.PrintProcessWindow.print_process_window import PrintProcessWindow
 from Screens.NetWindow.net_window import NetWindow
 from Screens.PrintProcessWindow._popup_finish_printing import PopupFinishPrinting
 
-from Moduls.ping import Ping
-
-import os
+# from Moduls.ping import Ping
 
 Window.top = 0
 Window.left = 0
