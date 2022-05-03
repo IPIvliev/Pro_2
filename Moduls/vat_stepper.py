@@ -10,7 +10,7 @@ step = GlobalValues.VMS
 
 import configparser
 config = configparser.ConfigParser()
-config.read('printer_config.ini')
+config.read('printer.ini')
 vat_speed = float(config['DEFAULT']['vat_speed'])
 
 direction = True
