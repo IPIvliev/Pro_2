@@ -28,12 +28,9 @@ Window.left = 0
 import configparser
 config = configparser.ConfigParser()
 config.read('printer.ini')
-print(config)
-print("Config")
-print(config.sections())
 
 class WindowManager(ScreenManager):
-    developer_mode = 0
+    developer_mode = int(config['DEFAULT']['developer_mode'])
     vat_speed = config.get("DEFAULT", "vat_speed")
     vat_amount = config.get("DEFAULT", "vat_amount")
     lift_distance = config.get("DEFAULT", "lift_distance")
