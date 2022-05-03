@@ -30,7 +30,7 @@ config = configparser.ConfigParser()
 config.read('printer_config.ini')
 print(config)
 print("Config")
-print(config.get("DEFAULT", "vat_speed"))
+print(config.sections)
 
 class WindowManager(ScreenManager):
     developer_mode = 0
