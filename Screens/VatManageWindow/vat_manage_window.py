@@ -24,10 +24,10 @@ class VatManageWindow(Screen):
 		EVENT.cancel()
 
 	def pour_in(self):
-		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward'), 0.002)
+		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'forward'), 0.02)
 
 	def pour_out(self):
-		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'backward'), 0.002)
+		self.event = Clock.schedule_interval(partial(PumpMotor.pump_go, 'backward'), 0.02)
 
 	def pour_stop(self):
 		self.event.cancel()

@@ -18,14 +18,14 @@ class PumpMotor():
 			GPIO.output(AI2, False)
 			
 			GPIO.output(PWA, True)
-			time.sleep(0.002)
+			time.sleep(0.02)
 
 		else:
 			GPIO.output(AI1, False)
 			GPIO.output(AI2, True)
 			
 			GPIO.output(PWA, True)
-			time.sleep(0.002)
+			time.sleep(0.02)
 
 	def pump_stop(ti):
 		GPIO.output(PWA, False)
