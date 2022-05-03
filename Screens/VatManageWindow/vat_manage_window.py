@@ -33,7 +33,7 @@ class VatManageWindow(Screen):
 		self.event.cancel()
 		self.event = Clock.schedule_once(partial(PumpMotor.pump_stop), 0.01)
 
-	def start_scale(self, scale):
+	def start_scale(self, scale, ti):
 		# i = 0
 		# long = 10
 		# while long < i:
