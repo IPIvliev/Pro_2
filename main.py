@@ -27,7 +27,7 @@ Window.left = 0
 
 import configparser
 config = configparser.ConfigParser()
-config.read('printer_config.ini')
+config.read('printer_config1.ini')
 
 class WindowManager(ScreenManager):
     developer_mode = 0
