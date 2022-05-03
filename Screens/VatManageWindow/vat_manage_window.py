@@ -4,16 +4,14 @@ from kivy.clock import Clock
 from functools import partial
 from Moduls.scale import Scale
 import time
-import multiprocessing
+import asyncio
 
 class VatManageWindow(Screen):
 	def on_enter(self):
 		scale = Scale.readCount()
 		self.ids.scale_value.text = "0.00"
 		global EVENT
-		moving = multiprocessing.Process(target=VatManageWindow.start_scale, args=(self, scale))
-
-		# EVENT = Clock.schedule_interval(partial(VatManageWindow.start_scale, self, scale), 1)
+		EVENT = Clock.schedule_interval(partial(VatManageWindow.start_scale, self, scale), 1)
 		# ioloop = asyncio.get_event_loop()
 		# tasks = [
 		# 	ioloop.create_task(VatManageWindow.start_scale(self, scale))
@@ -35,7 +33,7 @@ class VatManageWindow(Screen):
 		self.event.cancel()
 		self.event = Clock.schedule_once(partial(PumpMotor.pump_stop), 0.01)
 
-	def start_scale(self, scale):
+	def start_scale(self, scale, ti):
 		# i = 0
 		# long = 10
 		# while long < i:
