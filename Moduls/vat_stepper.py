@@ -8,11 +8,6 @@ import multiprocessing
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
 
-import configparser
-config = configparser.ConfigParser()
-config.read('printer_config.ini')
-vat_speed = float(config['DEFAULT']['vat_speed'])
-
 direction = True
 
 stop = False
@@ -47,7 +42,7 @@ class VatMotor():
 
     def go():
         # moving = multiprocessing.Process(target=VatMotor.stepper_go, args=(vat_speed, direction))
-        moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
+        moving = Thread(target=VatMotor.stepper_go, args=(0.0001, direction))
         moving.start()
         # moving.join()
         n_thread =  threading.active_count()
