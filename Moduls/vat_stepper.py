@@ -4,15 +4,13 @@ import time
 from threading import Thread
 import threading
 import multiprocessing
-import psutil
-import asyncio
 
 direct = GlobalValues.VMD
 step = GlobalValues.VMS
 
 import configparser
 config = configparser.ConfigParser()
-config.read('printer.ini')
+config.read('printer_config.ini')
 vat_speed = float(config['DEFAULT']['vat_speed'])
 
 direction = True
@@ -21,24 +19,20 @@ stop = False
 
 class VatMotor():
     #queue = multiprocessing.Queue()
-    async def stepper_go(speed, direction):
+    def stepper_go(speed, direction):
         #StepCounter = 0
         gpio.output(direct, direction)
-
-        name = multiprocessing.current_process().name
-        print(name, 'Starting')
         
-        global _STOP
-        _STOP = False
+        global stop
+        stop = False
         
         while True:
             #stop = VatMotor.queue.get()
             #print(VatMotor.queue)
             #print(VatMotor.queue.get())
-            if _STOP == True:
+            if stop == True:
                 break
             #turning the gpio on and off tells the easy driver to take one step
-            await asyncio.sleep(1)
             gpio.output(step, True)
             time.sleep(speed)
             gpio.output(step, False)
@@ -47,16 +41,12 @@ class VatMotor():
             time.sleep(speed)
 
     def stop_moving():
-        print("Start stopping")
-
+        global stop
+        stop = True
+        #VatMotor.queue.put(stop)
 
     def go():
-        # moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
-        #moving = multiprocessing.Process(name='VatSpin', target=VatMotor.stepper_go, args=(vat_speed, direction))
-        #moving.start()
+        # moving = multiprocessing.Process(target=VatMotor.stepper_go, args=(vat_speed, direction))
+        moving = Thread(target=VatMotor.stepper_go, args=(vat_speed, direction))
+        moving.start()
         # moving.join()
-
-        asyncio.run(VatMotor.stepper_go(vat_speed, direction))
-
-        n_thread =  threading.active_count()
-        print(n_thread)
