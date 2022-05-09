@@ -84,7 +84,8 @@ class Print():
 				Print().turn_led(exposure_time)
 
 				# Выключаем вывод текущего слоя на LCD дисплей
-				l.terminate()
+				if l:
+					l.terminate()
 				l = subprocess.Popen(['python3', 'two.py', layer], stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=False)
 				print('Выводим слой', layer.name, 'на LCD дисплей')
 				# Включаем поворот ванны и парарельно перемещаемся вверх по z
