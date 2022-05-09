@@ -5,7 +5,7 @@ from kivy.base import runTouchApp
 from kivy.core.window import Window
 import sys
 
-Window.size = (800, 480)
+Window.size = (1280, 1024)
 #Window.borderless = True
 Window.top = 580
 Window.left = 200
@@ -23,7 +23,7 @@ Builder.load_string("""
 
 class PrinterLayout(Screen):
     def go_two(a, self):
-        #print(a)
+        print("Display layer in two.py")
         self.ids.img.source = a
 
     def __init__(self, **kwargs):
