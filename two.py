@@ -5,7 +5,7 @@ from kivy.base import runTouchApp
 from kivy.core.window import Window
 import sys
 
-#Window.size = (1280, 1024)
+Window.size = (1280, 1024)
 #Window.borderless = True
 #Window.top = 0
 Window.left = 801
