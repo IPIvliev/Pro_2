@@ -78,16 +78,15 @@ class Print():
 
 				# Выводим текущий слой на LCD дисплей
 				Clock.schedule_once(partial(Print.setLayerImage, self, layer), 1)
-
+				l = subprocess.Popen(['python3', 'two.py', layer], stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=False)
+				print('Выводим слой', layer.name, 'на LCD дисплей')
 
 				# Включаем LED матрицу на время, указанное параметрах модели и выключаем
 				Print().turn_led(exposure_time)
 
 				# Выключаем вывод текущего слоя на LCD дисплей
-				if 'l' in locals():
-					l.terminate()
-				l = subprocess.Popen(['python3', 'two.py', layer], stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=False)
-				print('Выводим слой', layer.name, 'на LCD дисплей')
+				l.terminate()
+
 				# Включаем поворот ванны и парарельно перемещаемся вверх по z
 				Print().vat_and_z_go(vat_delay, vat_z_delay, z_step_amount)
 
