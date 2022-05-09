@@ -84,7 +84,7 @@ class Print():
 				Print().turn_led(exposure_time)
 
 				# Выключаем вывод текущего слоя на LCD дисплей
-				if l != None:
+				if 'l' in locals():
 					l.terminate()
 				l = subprocess.Popen(['python3', 'two.py', layer], stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=False)
 				print('Выводим слой', layer.name, 'на LCD дисплей')
