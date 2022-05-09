@@ -8,7 +8,7 @@ import sys
 #Window.size = (1280, 1024)
 #Window.borderless = True
 #Window.top = 0
-#Window.left = 801
+Window.left = 801
 Window.fullscreen = 1
 
 Builder.load_string("""
