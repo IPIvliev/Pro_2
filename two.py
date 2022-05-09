@@ -6,10 +6,10 @@ from kivy.core.window import Window
 import sys
 
 Window.size = (1280, 1024)
-#Window.borderless = True
+Window.borderless = True
 Window.top = 0
-Window.left = 481
-#Window.fullscreen = 1
+Window.left = 801
+Window.fullscreen = 1
 
 Builder.load_string("""
 
