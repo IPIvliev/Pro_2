@@ -109,38 +109,7 @@
 					color: 0.92, 0.94, 0.01, 1
 
 		BoxLayout:
-			cols: 3
 			size_hint: 1, 0.1
-
-			BoxLayout:
-				canvas:
-					Color:
-						rgba: 0.71, 0.72, 0.11, 1
-					Rectangle:
-						pos: self.pos
-						size: self.size
-				size_hint: 0.1, 1
-
-				Label:
-					id: temp_label
-					text: '20C°'
-					font_size: sp(28)
-					color: 0,0,0,0.8
-
-			BoxLayout:
-				canvas:
-					Color:
-						rgba: 0.71, 0.72, 0.11, 1
-					Rectangle:
-						pos: self.pos
-						size: self.size
-				size_hint: 0.1, 1
-
-				Label:
-					id: net_label
-					text: app.net_status
-					font_size: sp(18)
-					color: 0,0,0,0.8
 
 			AnchorLayout:
 			    canvas:
