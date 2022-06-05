@@ -12,7 +12,6 @@ from Screens.ManageWindow.manage_window import ManageWindow
 from Screens.SettingsWindow.settings_window import SettingsWindow
 from Screens.AboutWindow.about_window import AboutWindow
 from Screens.PrintWindow.print_window import PrintWindow
-from Screens.CalibrationWindow.calibration_window import CalibrationWindow
 from Screens.ZMovingWindow.z_moving_window import ZMovingWindow
 from Screens.VatManageWindow.vat_manage_window import VatManageWindow
 from Screens.DeveloperWindow.developer_window import DeveloperWindow
